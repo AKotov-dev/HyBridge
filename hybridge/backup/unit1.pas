@@ -385,7 +385,7 @@ begin
 
     // SpeedUP
     SpeedUPEdit.Text := GetJSONValue(config, 'outbounds[0].up_mbps');
-    //SpeedDown
+    // SpeedDown
     SpeedDownEdit.Text := GetJSONValue(config, 'outbounds[0].down_mbps');
 
 

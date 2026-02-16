@@ -388,7 +388,6 @@ begin
     // SpeedDown
     SpeedDownEdit.Text := GetJSONValue(config, 'outbounds[0].down_mbps');
 
-
     AUTH_PASS := GetJSONValue(config, 'outbounds[0].password');
 
     OBFS_PASS := GetJSONValue(config, 'outbounds[0].obfs.password');
