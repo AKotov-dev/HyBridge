@@ -1,0 +1,93 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: tmainform.barcodeqr1.text
+msgctxt "tmainform.barcodeqr1.text"
+msgid "HyBridge"
+msgstr ""
+
+#: tmainform.bypassbox.text
+msgid ".ru"
+msgstr ""
+
+#: tmainform.caption
+msgctxt "tmainform.caption"
+msgid "HyBridge"
+msgstr ""
+
+#: tmainform.copybtn.caption
+msgid "Copy URI to Clipboard"
+msgstr ""
+
+#: tmainform.createbtn.caption
+msgid "Create Client and Server"
+msgstr ""
+
+#: tmainform.editlocalhttp.text
+msgid "8889"
+msgstr ""
+
+#: tmainform.editlocalsocks.text
+msgid "1080"
+msgstr ""
+
+#: tmainform.edittcpport.text
+msgid "8080"
+msgstr ""
+
+#: tmainform.editudpport.text
+msgid "443"
+msgstr ""
+
+#: tmainform.label1.caption
+msgid "---Server: IP -------"
+msgstr ""
+
+#: tmainform.label2.caption
+msgid "Server UDP port"
+msgstr ""
+
+#: tmainform.label3.caption
+msgid "Server TCP port"
+msgstr ""
+
+#: tmainform.label4.caption
+msgid "Server Mask"
+msgstr ""
+
+#: tmainform.label5.caption
+msgid "URI for insertion into the client (NekoBox, etc.)"
+msgstr ""
+
+#: tmainform.label6.caption
+msgid "---Client: Bypass"
+msgstr ""
+
+#: tmainform.label7.caption
+msgid "Local SOCKS 5"
+msgstr ""
+
+#: tmainform.label8.caption
+msgid "HTTP"
+msgstr ""
+
+#: tmainform.label9.caption
+msgid "-----------"
+msgstr ""
+
+#: tmainform.maskbox.text
+msgid "https://www.apple.com"
+msgstr ""
+
+#: tmainform.startbtn.caption
+msgid "Start"
+msgstr ""
+
+#: tmainform.statictext1.caption
+msgid "License: GPLv3   Author: alex_q_2000 (C) 2026   https://github.com/AKotov-dev/HyBridge"
+msgstr ""
+
+#: tmainform.stopbtn.caption
+msgid "Stop"
+msgstr ""
+

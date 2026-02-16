@@ -149,7 +149,7 @@ object MainForm: TMainForm
     Top = 437
     Width = 611
     Align = alBottom
-    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2026  https://github.com/AKotov-dev/HyBridge'
+    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2026   https://github.com/AKotov-dev/HyBridge'
     Font.Color = clGray
     Font.Height = -11
     Font.Name = 'Sans'
@@ -198,7 +198,7 @@ object MainForm: TMainForm
     BorderSpacing.Right = 8
     BorderSpacing.Bottom = 5
     ParentColor = False
-    Text = '11111'
+    Text = 'HyBridge'
   end
   object MaskBox: TComboBox
     AnchorSideLeft.Control = Label4
