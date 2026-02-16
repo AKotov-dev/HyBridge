@@ -394,8 +394,6 @@ begin
 
     //--server--
     config := GetUserDir + '.config/hybridge/config/server/etc/hysteria/config.yaml';
-    //server_port TCP
-    //EditTCPPort.Text := GetNestedYAMLValue(config, ['tcp', 'listen']);
 
     //Masquerade (Mask)
     MaskBox.Text := GetNestedYAMLValue(config, ['masquerade', 'proxy', 'url']);
@@ -404,8 +402,8 @@ begin
     Memo1.Text := BuildHysteria2URI(EditServerIP.Text, EditUDPPort.Text,
       AUTH_PASS, 'salamander', OBFS_PASS, True,
       // Boolean, без кавычек
-      '50',          // UpMbps
-      '100',         // DownMbps
+      SpeedUpEdit.Text,          // UpMbps
+      SpeedDownEdit.Text,        // DownMbps
       'HyBridge'     // Name
       );
 
