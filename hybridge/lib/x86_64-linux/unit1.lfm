@@ -7,7 +7,7 @@ object MainForm: TMainForm
   Caption = 'HyBridge'
   ClientHeight = 457
   ClientWidth = 611
-  SessionProperties = 'Left;Top;SaveDialog1.InitialDir'
+  SessionProperties = 'Left;SaveDialog1.InitialDir;Top;Width;Height'
   LCLVersion = '4.4.0.0'
   OnCreate = FormCreate
   OnShow = FormShow
