@@ -412,6 +412,11 @@ var
 begin
   Application.ProcessMessages;
 
+  if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
+    (Trim(EditTCPPort.Text) = '') or (Trim(MaskBox.Text) = '') or
+    (Trim(ByPassBox.Text) = '') or (Trim(EditLocalSocks.Text) = '') or
+    (Trim(EditLocalHTTP.Text) = '') then Exit;
+
   if FileExists(GetUserDir + '.config/hybridge/config/server/etc/hysteria/cert.pem') then
     if MessageDlg(
       'Конфигурации клиента и сервера уже созданы. Пересоздать?',
@@ -531,6 +536,11 @@ procedure TMainForm.StartBtnClick(Sender: TObject);
 var
   config, AUTH_PASS, OBFS_PASS: string;
 begin
+  if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
+    (Trim(EditTCPPort.Text) = '') or (Trim(MaskBox.Text) = '') or
+    (Trim(ByPassBox.Text) = '') or (Trim(EditLocalSocks.Text) = '') or
+    (Trim(EditLocalHTTP.Text) = '') then Exit;
+
   config := GetUserDir + '.config/hybridge/config/client.json';
 
   if not FileExists(config) then Exit;

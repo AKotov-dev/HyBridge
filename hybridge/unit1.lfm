@@ -24,7 +24,6 @@ object MainForm: TMainForm
     BorderSpacing.Left = 5
     BorderSpacing.Top = 8
     TabOrder = 0
-    Text = '192.168.0.100'
     OnKeyPress = EditServerIPKeyPress
   end
   object EditUDPPort: TEdit

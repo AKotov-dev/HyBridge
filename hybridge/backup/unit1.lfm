@@ -24,7 +24,6 @@ object MainForm: TMainForm
     BorderSpacing.Left = 5
     BorderSpacing.Top = 8
     TabOrder = 0
-    Text = '192.168.0.100'
     OnKeyPress = EditServerIPKeyPress
   end
   object EditUDPPort: TEdit
@@ -163,9 +162,10 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo1
     Left = 386
     Height = 37
-    Top = 300
+    Top = 298
     Width = 217
     Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 2
     Caption = 'Copy URI to Clipboard'
     TabOrder = 8
     OnClick = CopyBtnClick
@@ -189,7 +189,7 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = CopyBtn
     Left = 386
-    Height = 245
+    Height = 243
     Top = 50
     Width = 217
     Anchors = [akTop, akLeft, akRight, akBottom]
