@@ -43,12 +43,13 @@ noarch=0
 deb=1
 
 [FILES]
-0=/opt/hybridge/sing-box
-1=/usr/share/icons/hybridge.png
-2=/etc/systemd/user/hybridge.service
-3=/usr/share/applications/hybridge.desktop
-4=/usr/share/hybridge/
-5=/usr/share/doc/hybridge/
+0=/usr/bin/hybridge
+1=/opt/hybridge/sing-box
+2=/usr/share/icons/hybridge.png
+3=/etc/systemd/user/hybridge.service
+4=/usr/share/applications/hybridge.desktop
+5=/usr/share/hybridge/
+6=/usr/share/doc/hybridge/
 
 [AFTERINSTALL]
 0=#!/bin/bash
