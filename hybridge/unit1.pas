@@ -511,7 +511,7 @@ var
 begin
   MainForm.Caption := Application.Title;
 
-   // Устраняем баг иконки приложения
+  // Устраняем баг иконки приложения
   bmp := TBitmap.Create;
   try
     bmp.PixelFormat := pf32bit;

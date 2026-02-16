@@ -149,7 +149,7 @@ object MainForm: TMainForm
     Top = 437
     Width = 611
     Align = alBottom
-    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2026'
+    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2026  https://github.com/AKotov-dev/HyBridge'
     Font.Color = clGray
     Font.Height = -11
     Font.Name = 'Sans'
