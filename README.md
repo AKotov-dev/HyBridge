@@ -6,6 +6,7 @@ Simple Hysteria2 client and server configurator.
 + DEB: libproxy1v5 libproxy1-plugin-gsettings
   
 **Lazarus:** LazBarcodes (from the Network Packet Manager)  
+  
 Working directory: ~/.config/hybridge  
 Configurations/Certificates: ~/.config/hybridge/config  
 ![](https://github.com/AKotov-dev/HyBridge/blob/main/Screenshot2.png)  
