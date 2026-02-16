@@ -5,7 +5,7 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, StrUtils, FileUtil,
   Buttons, Process, ClipBrd, ExtCtrls, IniPropStorage, ubarcodes, DefaultTranslator;
 
 type
@@ -35,6 +35,7 @@ type
     Label4: TLabel;
     Label5: TLabel;
     Memo1: TMemo;
+    SaveDialog1: TSaveDialog;
     Shape1: TShape;
     StartBtn: TSpeedButton;
     StopBtn: TSpeedButton;
@@ -478,6 +479,28 @@ begin
 
     //Создаём конфиг Клиента
     CreateClientConfig(AUTH_PASS, OBFS_PASS);
+
+    //Выгружаем архив конфигураций и сертификаты
+    if not FileExists(GetUserDir + '.config/ss-cloak-client/server-conf.tar.gz') then
+      Exit;
+
+    if (SaveDialog1.Execute) then
+    begin
+      if not AnsiEndsText('.tar.gz', SaveDialog1.FileName) then
+      begin
+        if SameText(ExtractFileExt(SaveDialog1.FileName), '.gz') then
+          SaveDialog1.FileName := ChangeFileExt(SaveDialog1.FileName, '.tar.gz')
+        else
+          SaveDialog1.FileName := SaveDialog1.FileName + '.tar.gz';
+      end;
+
+      //Создаём архив cd ~/.config/hybridge && tar czf config.tar.gz ./config и выгружаем
+      StartProcess('cd ~/.config/hybridge && tar czf config.tar.gz ./config');
+
+      CopyFile(GetUserDir + '.config/hybridge/config.tar.gz',
+        SaveDialog1.FileName, [cffOverwriteFile]);
+    end;
+
 
     if FileExists(GetUserDir + '.config/hybridge/config/client.json') then
       StartBtn.Enabled := True;
