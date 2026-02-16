@@ -481,10 +481,7 @@ begin
     CreateClientConfig(AUTH_PASS, OBFS_PASS);
 
     //Выгружаем архив конфигураций и сертификаты
-    if not FileExists(GetUserDir + '.config/ss-cloak-client/server-conf.tar.gz') then
-      Exit;
-
-    if (SaveDialog1.Execute) then
+    if SaveDialog1.Execute then
     begin
       if not AnsiEndsText('.tar.gz', SaveDialog1.FileName) then
       begin
@@ -494,8 +491,8 @@ begin
           SaveDialog1.FileName := SaveDialog1.FileName + '.tar.gz';
       end;
 
-      //Создаём архив cd ~/.config/hybridge && tar czf config.tar.gz ./config и выгружаем
-      StartProcess('cd ~/.config/hybridge && tar czf config.tar.gz ./config');
+      //Создаём архив cd ~/.config/hybridge/config/ && tar czf config.tar.gz ./config и выгружаем
+      StartProcess('tar -zcf ~/.config/hybridge/config.tar.gz -C ~/.config/hybridge/config .');
 
       CopyFile(GetUserDir + '.config/hybridge/config.tar.gz',
         SaveDialog1.FileName, [cffOverwriteFile]);
