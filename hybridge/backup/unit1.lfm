@@ -7,6 +7,7 @@ object MainForm: TMainForm
   Caption = 'HyBridge'
   ClientHeight = 457
   ClientWidth = 611
+  SessionProperties = 'Top;Left'
   LCLVersion = '4.4.0.0'
   OnCreate = FormCreate
   OnShow = FormShow
@@ -368,5 +369,10 @@ object MainForm: TMainForm
     Width = 66
     BorderSpacing.Left = 5
     Caption = '-----------'
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    Left = 64
+    Top = 360
   end
 end

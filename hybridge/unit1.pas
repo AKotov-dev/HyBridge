@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Buttons, Process, ClipBrd, ExtCtrls, ubarcodes;
+  Buttons, Process, ClipBrd, ExtCtrls, IniPropStorage, ubarcodes;
 
 type
 
@@ -17,6 +17,7 @@ type
     BypassBox: TComboBox;
     EditLocalSocks: TEdit;
     EditLocalHTTP: TEdit;
+    IniPropStorage1: TIniPropStorage;
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
@@ -510,6 +511,8 @@ begin
   //Рабочий каталог
   if not DirectoryExists(GetUserDir + '.config/hybridge') then
     ForceDirectories(GetUserDir + '.config/hybridge');
+
+  IniPropStorage1.IniFileName := GetUserDir + '.config/hybridge/hybridge.conf';
 end;
 
 //Копирование URI в буфер
