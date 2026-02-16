@@ -12,6 +12,6 @@ Configurations/Certificates: ~/.config/hybridge/config
 + Be sure to save the provided configuration archive `config.tar.gz`
 + Copy the server configuration and certificate from `config.tar.gz` to `/etc/hysteria/{cert.pem,config.yaml}` on your VPS
 + Activate the Hysteria server on your VPS: `systemctl restart hysteria; systemctl enable hysteria`
-+ Click the `Start` button in the `HyBridge` client window and access the free internet
++ Click the `Start` button in the `HyBridge` client window and access the open internet
 
 The system proxy is configured automatically. Supported DEs: Budgie, GNOME, MATE, KDE. XFCE and LXDE support system proxy mode when [XDE-Proxy-GUI](https://github.com/AKotov-dev/xde-proxy-gui) is installed.
