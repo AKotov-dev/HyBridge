@@ -17,6 +17,7 @@ type
     BypassBox: TComboBox;
     EditLocalSocks: TEdit;
     EditLocalHTTP: TEdit;
+    Image1: TImage;
     IniPropStorage1: TIniPropStorage;
     Label6: TLabel;
     Label7: TLabel;
@@ -505,8 +506,20 @@ begin
 end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
+var
+  bmp: TBitmap;
 begin
   MainForm.Caption := Application.Title;
+
+   // Устраняем баг иконки приложения
+  bmp := TBitmap.Create;
+  try
+    bmp.PixelFormat := pf32bit;
+    bmp.Assign(Image1.Picture.Graphic);
+    Application.Icon.Assign(bmp);
+  finally
+    bmp.Free;
+  end;
 
   //Рабочий каталог
   if not DirectoryExists(GetUserDir + '.config/hybridge') then

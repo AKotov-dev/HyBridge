@@ -17,6 +17,7 @@ type
     BypassBox: TComboBox;
     EditLocalSocks: TEdit;
     EditLocalHTTP: TEdit;
+    Image1: TImage;
     IniPropStorage1: TIniPropStorage;
     Label6: TLabel;
     Label7: TLabel;
