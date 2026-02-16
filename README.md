@@ -1,7 +1,7 @@
 # HyBridge
 Simple Hysteria2 client and server configurator.  
   
-**Dependencies:** gtk2 systemd  
+**Dependencies:** systemd gtk2 (libgtk2.0-0 for Ubuntu)  
 **Lazarus:** LazBarcodes (from the Network Packet Manager)  
 Working directory: ~/.config/hybridge  
 Configurations/Certificates: ~/.config/hybridge/config  
