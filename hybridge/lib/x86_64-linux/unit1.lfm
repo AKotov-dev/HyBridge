@@ -1,0 +1,373 @@
+object MainForm: TMainForm
+  Left = 298
+  Height = 457
+  Top = 129
+  Width = 611
+  ActiveControl = EditServerIP
+  Caption = 'HyBridge'
+  ClientHeight = 457
+  ClientWidth = 611
+  LCLVersion = '4.4.0.0'
+  OnCreate = FormCreate
+  OnShow = FormShow
+  object EditServerIP: TEdit
+    AnchorSideLeft.Control = Label1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Side = asrBottom
+    Left = 119
+    Height = 37
+    Top = 8
+    Width = 263
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 8
+    TabOrder = 0
+    Text = '192.168.0.100'
+    OnKeyPress = EditServerIPKeyPress
+  end
+  object EditUDPPort: TEdit
+    AnchorSideLeft.Control = EditServerIP
+    AnchorSideTop.Control = EditServerIP
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = EditServerIP
+    AnchorSideRight.Side = asrBottom
+    Left = 119
+    Height = 37
+    Top = 49
+    Width = 263
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    TabOrder = 2
+    Text = '443'
+    OnKeyPress = EditServerIPKeyPress
+  end
+  object EditTCPPort: TEdit
+    AnchorSideLeft.Control = EditServerIP
+    AnchorSideTop.Control = EditUDPPort
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = EditServerIP
+    AnchorSideRight.Side = asrBottom
+    Left = 119
+    Height = 37
+    Top = 90
+    Width = 263
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    TabOrder = 3
+    Text = '8080'
+    OnKeyPress = EditServerIPKeyPress
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = EditServerIP
+    AnchorSideTop.Side = asrCenter
+    Left = 8
+    Height = 17
+    Top = 18
+    Width = 106
+    BorderSpacing.Left = 8
+    Caption = '---Server: IP -----'
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = EditUDPPort
+    AnchorSideTop.Side = asrCenter
+    Left = 8
+    Height = 17
+    Top = 59
+    Width = 95
+    BorderSpacing.Left = 8
+    Caption = 'Server UDP port'
+  end
+  object Label3: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = EditTCPPort
+    AnchorSideTop.Side = asrCenter
+    Left = 8
+    Height = 17
+    Top = 100
+    Width = 94
+    BorderSpacing.Left = 8
+    Caption = 'Server TCP port'
+  end
+  object Label4: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = MaskBox
+    AnchorSideTop.Side = asrCenter
+    Left = 8
+    Height = 17
+    Top = 141
+    Width = 71
+    BorderSpacing.Left = 8
+    Caption = 'Server Mask'
+  end
+  object CreateBtn: TBitBtn
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = EditServerIP
+    AnchorSideBottom.Side = asrBottom
+    Left = 386
+    Height = 37
+    Top = 8
+    Width = 217
+    Anchors = [akTop, akRight, akBottom]
+    BorderSpacing.Top = 8
+    BorderSpacing.Right = 8
+    Caption = 'Create Client and Server'
+    TabOrder = 1
+    OnClick = CreateBtnClick
+  end
+  object Memo1: TMemo
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = StaticText1
+    Left = 8
+    Height = 100
+    Top = 337
+    Width = 595
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Left = 8
+    BorderSpacing.Right = 8
+    Font.Height = -13
+    Font.Name = 'Monospace'
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 9
+  end
+  object StaticText1: TStaticText
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 20
+    Top = 437
+    Width = 611
+    Align = alBottom
+    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2026'
+    Font.Color = clGray
+    Font.Height = -11
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 10
+  end
+  object CopyBtn: TBitBtn
+    AnchorSideLeft.Control = CreateBtn
+    AnchorSideRight.Control = Memo1
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Memo1
+    Left = 386
+    Height = 37
+    Top = 298
+    Width = 217
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 2
+    Caption = 'Copy URI to Clipboard'
+    TabOrder = 8
+    OnClick = CopyBtnClick
+  end
+  object Label5: TLabel
+    AnchorSideLeft.Control = Memo1
+    AnchorSideBottom.Control = Memo1
+    Left = 8
+    Height = 17
+    Top = 318
+    Width = 276
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Bottom = 2
+    Caption = 'URI for insertion into the client (NekoBox, etc.)'
+  end
+  object BarcodeQR1: TBarcodeQR
+    AnchorSideLeft.Control = CreateBtn
+    AnchorSideTop.Control = CreateBtn
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = CopyBtn
+    Left = 386
+    Height = 243
+    Top = 50
+    Width = 217
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 8
+    BorderSpacing.Bottom = 5
+    ParentColor = False
+    Text = '11111'
+  end
+  object MaskBox: TComboBox
+    AnchorSideLeft.Control = Label4
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = EditTCPPort
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = EditServerIP
+    AnchorSideRight.Side = asrBottom
+    Left = 84
+    Height = 37
+    Top = 131
+    Width = 298
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 4
+    ItemHeight = 0
+    ItemIndex = 0
+    Items.Strings = (
+      'https://www.apple.com'
+      'https://www.avito.ru'
+      'https://www.cloudflare.com'
+      'https://www.microsoft.com'
+      'https://www.ozon.ru'
+      'https://www.wildberries.ru'
+    )
+    Sorted = True
+    TabOrder = 4
+    Text = 'https://www.apple.com'
+  end
+  object Label6: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = BypassBox
+    AnchorSideTop.Side = asrCenter
+    Left = 8
+    Height = 17
+    Top = 193
+    Width = 101
+    BorderSpacing.Left = 8
+    Caption = '---Client: Bypass'
+  end
+  object BypassBox: TComboBox
+    AnchorSideLeft.Control = Label6
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = MaskBox
+    AnchorSideTop.Side = asrBottom
+    Left = 114
+    Height = 37
+    Top = 183
+    Width = 94
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 15
+    Font.Height = -13
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ItemHeight = 0
+    ItemIndex = 0
+    Items.Strings = (
+      '.ru'
+      '.cn'
+      '.ir'
+    )
+    ParentFont = False
+    TabOrder = 5
+    Text = '.ru'
+  end
+  object StartBtn: TSpeedButton
+    AnchorSideLeft.Control = Shape1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = EditLocalSocks
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Side = asrBottom
+    Left = 24
+    Height = 37
+    Top = 270
+    Width = 110
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 8
+    Caption = 'Start'
+    OnClick = StartBtnClick
+  end
+  object StopBtn: TSpeedButton
+    AnchorSideLeft.Control = StartBtn
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = StartBtn
+    AnchorSideTop.Side = asrCenter
+    Left = 139
+    Height = 37
+    Top = 270
+    Width = 110
+    BorderSpacing.Left = 5
+    Caption = 'Stop'
+    OnClick = StopBtnClick
+  end
+  object EditLocalSocks: TEdit
+    AnchorSideLeft.Control = BypassBox
+    AnchorSideTop.Control = BypassBox
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = BypassBox
+    AnchorSideRight.Side = asrBottom
+    Left = 114
+    Height = 37
+    Top = 225
+    Width = 94
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 5
+    TabOrder = 6
+    Text = '1080'
+    OnKeyPress = EditServerIPKeyPress
+  end
+  object Shape1: TShape
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = StartBtn
+    AnchorSideTop.Side = asrCenter
+    Left = 8
+    Height = 12
+    Top = 282
+    Width = 11
+    BorderSpacing.Left = 8
+    Brush.Color = clYellow
+    Pen.Color = clGray
+    Shape = stCircle
+  end
+  object Label7: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = EditLocalSocks
+    AnchorSideTop.Side = asrCenter
+    Left = 8
+    Height = 17
+    Top = 235
+    Width = 86
+    BorderSpacing.Left = 8
+    Caption = 'Local SOCKS 5'
+  end
+  object Label8: TLabel
+    AnchorSideTop.Control = EditLocalHTTP
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = EditLocalHTTP
+    Left = 249
+    Height = 17
+    Top = 235
+    Width = 34
+    Anchors = [akTop, akRight]
+    BorderSpacing.Right = 5
+    Caption = 'HTTP'
+  end
+  object EditLocalHTTP: TEdit
+    AnchorSideTop.Control = EditLocalSocks
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = EditServerIP
+    AnchorSideRight.Side = asrBottom
+    Left = 288
+    Height = 37
+    Top = 225
+    Width = 94
+    Anchors = [akTop, akRight]
+    TabOrder = 7
+    Text = '8889'
+    OnKeyPress = EditServerIPKeyPress
+  end
+  object Label9: TLabel
+    AnchorSideLeft.Control = BypassBox
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = BypassBox
+    AnchorSideTop.Side = asrCenter
+    Left = 213
+    Height = 17
+    Top = 193
+    Width = 66
+    BorderSpacing.Left = 5
+    Caption = '-----------'
+  end
+end
