@@ -328,9 +328,9 @@ object MainForm: TMainForm
     Left = 8
     Height = 17
     Top = 235
-    Width = 86
+    Width = 77
     BorderSpacing.Left = 8
-    Caption = 'Local SOCKS 5'
+    Caption = 'SOCKS5 port'
   end
   object Label8: TLabel
     AnchorSideTop.Control = EditLocalHTTP

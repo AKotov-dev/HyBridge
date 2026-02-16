@@ -17,7 +17,7 @@
 {"hash":5941396,"name":"tmainform.startbtn.caption","sourcebytes":[83,116,97,114,116],"value":"Start"},
 {"hash":371552,"name":"tmainform.stopbtn.caption","sourcebytes":[83,116,111,112],"value":"Stop"},
 {"hash":213936,"name":"tmainform.editlocalsocks.text","sourcebytes":[49,48,56,48],"value":"1080"},
-{"hash":91192117,"name":"tmainform.label7.caption","sourcebytes":[76,111,99,97,108,32,83,79,67,75,83,32,53],"value":"Local SOCKS 5"},
+{"hash":103771796,"name":"tmainform.label7.caption","sourcebytes":[83,79,67,75,83,53,32,112,111,114,116],"value":"SOCKS5 port"},
 {"hash":317840,"name":"tmainform.label8.caption","sourcebytes":[72,84,84,80],"value":"HTTP"},
 {"hash":244665,"name":"tmainform.editlocalhttp.text","sourcebytes":[56,56,56,57],"value":"8889"},
 {"hash":265289741,"name":"tmainform.label9.caption","sourcebytes":[45,45,45,45,45,45,45,45,45,45,45],"value":"-----------"}

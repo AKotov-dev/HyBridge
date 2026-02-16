@@ -492,7 +492,6 @@ begin
       end;
 
       //Создаём архив cd ~/.config/hybridge/config/ && tar czf config.tar.gz ./config и выгружаем
-      // StartProcess('cd ~/.config/hybridge/config/ && tar czf config.tar.gz ./config');
       StartProcess('tar -zcf ~/.config/hybridge/config.tar.gz -C ~/.config/hybridge/config .');
 
       CopyFile(GetUserDir + '.config/hybridge/config.tar.gz',

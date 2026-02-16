@@ -74,8 +74,8 @@ msgid "---Client: Bypass"
 msgstr "---Клиент: Байпас"
 
 #: tmainform.label7.caption
-msgid "Local SOCKS 5"
-msgstr "Лок. SOCKS 5"
+msgid "SOCKS5 port"
+msgstr "Порт SOCKS5"
 
 #: tmainform.label8.caption
 msgid "HTTP"
