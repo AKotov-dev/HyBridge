@@ -7,7 +7,7 @@ object MainForm: TMainForm
   Caption = 'HyBridge'
   ClientHeight = 457
   ClientWidth = 611
-  SessionProperties = 'Left;Top;SaveDialog1.InitialDir'
+  SessionProperties = 'Left;SaveDialog1.InitialDir;Top;Width;Height'
   LCLVersion = '4.4.0.0'
   OnCreate = FormCreate
   OnShow = FormShow
@@ -188,10 +188,10 @@ object MainForm: TMainForm
     BorderSpacing.Left = 5
     BorderSpacing.Top = 4
     ItemHeight = 0
-    ItemIndex = 0
     Items.Strings = (
       'https://www.apple.com'
       'https://www.avito.ru'
+      'https://www.bing.com'
       'https://www.cloudflare.com'
       'https://www.microsoft.com'
       'https://www.ozon.ru'
@@ -227,13 +227,19 @@ object MainForm: TMainForm
     Font.Name = 'Sans'
     Font.Style = [fsBold]
     ItemHeight = 0
-    ItemIndex = 0
     Items.Strings = (
-      '.ru'
+      '.by'
       '.cn'
       '.ir'
+      '.kz'
+      '.ru'
+      '.sa'
+      '.tm'
+      '.tr'
+      '.uz'
     )
     ParentFont = False
+    Sorted = True
     TabOrder = 4
     Text = '.ru'
   end
