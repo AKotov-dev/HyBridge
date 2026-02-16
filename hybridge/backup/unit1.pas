@@ -102,8 +102,6 @@ begin
   Result := Format('hy2://%s@%s:%s/?%s#%s', [Password, Server, Port, Params, Name]);
 end;
 
-
-
 //Получение из YAML
 function GetNestedYAMLValue(const FileName: string; const Path: array of string): string;
 var
@@ -385,6 +383,11 @@ begin
     // local_port HTTP
     EditLocalHTTP.Text := GetJSONValue(config, 'inbounds[1].listen_port');
 
+    // SpeedUP
+    SpeedUPEdit.Text := GetJSONValue(config, 'outbounds[0].up_mbps');
+    //SpeedDown
+    SpeedDownEdit.Text := GetJSONValue(config, 'outbounds[0].down_mbps');
+
 
     AUTH_PASS := GetJSONValue(config, 'outbounds[0].password');
 
@@ -400,7 +403,8 @@ begin
 
     //Получаем URI
     Memo1.Text := BuildHysteria2URI(EditServerIP.Text, EditUDPPort.Text,
-      AUTH_PASS, 'salamander', OBFS_PASS, True,          // Boolean, без кавычек
+      AUTH_PASS, 'salamander', OBFS_PASS, True,
+      // Boolean, без кавычек
       '50',          // UpMbps
       '100',         // DownMbps
       'HyBridge'     // Name

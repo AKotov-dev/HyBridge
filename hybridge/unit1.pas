@@ -383,6 +383,11 @@ begin
     // local_port HTTP
     EditLocalHTTP.Text := GetJSONValue(config, 'inbounds[1].listen_port');
 
+    // SpeedUP
+    SpeedUPEdit.Text := GetJSONValue(config, 'outbounds[0].up_mbps');
+    // SpeedDown
+    SpeedDownEdit.Text := GetJSONValue(config, 'outbounds[0].down_mbps');
+
 
     AUTH_PASS := GetJSONValue(config, 'outbounds[0].password');
 
