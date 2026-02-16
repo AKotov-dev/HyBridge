@@ -31,10 +31,6 @@ msgstr ""
 msgid "1080"
 msgstr ""
 
-#: tmainform.edittcpport.text
-msgid "8080"
-msgstr ""
-
 #: tmainform.editudpport.text
 msgid "443"
 msgstr ""
@@ -43,12 +39,16 @@ msgstr ""
 msgid "---Server: IP -------"
 msgstr ""
 
+#: tmainform.label10.caption
+msgid "DOWN"
+msgstr ""
+
 #: tmainform.label2.caption
 msgid "Server UDP port"
 msgstr ""
 
 #: tmainform.label3.caption
-msgid "Server TCP port"
+msgid "Speed: UP"
 msgstr ""
 
 #: tmainform.label4.caption
@@ -64,7 +64,7 @@ msgid "---Client: Bypass"
 msgstr ""
 
 #: tmainform.label7.caption
-msgid "SOCKS5 port"
+msgid "Port: SOCKS5"
 msgstr ""
 
 #: tmainform.label8.caption
@@ -77,6 +77,16 @@ msgstr ""
 
 #: tmainform.maskbox.text
 msgid "https://www.apple.com"
+msgstr ""
+
+#: tmainform.speeddownedit.text
+msgctxt "tmainform.speeddownedit.text"
+msgid "100"
+msgstr ""
+
+#: tmainform.speedupedit.text
+msgctxt "tmainform.speedupedit.text"
+msgid "100"
 msgstr ""
 
 #: tmainform.startbtn.caption

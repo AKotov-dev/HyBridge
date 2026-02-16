@@ -43,22 +43,6 @@ object MainForm: TMainForm
     Text = '443'
     OnKeyPress = EditServerIPKeyPress
   end
-  object EditTCPPort: TEdit
-    AnchorSideLeft.Control = EditServerIP
-    AnchorSideTop.Control = EditUDPPort
-    AnchorSideTop.Side = asrBottom
-    AnchorSideRight.Control = EditServerIP
-    AnchorSideRight.Side = asrBottom
-    Left = 131
-    Height = 37
-    Top = 90
-    Width = 251
-    Anchors = [akTop, akLeft, akRight]
-    BorderSpacing.Top = 4
-    TabOrder = 3
-    Text = '8080'
-    OnKeyPress = EditServerIPKeyPress
-  end
   object Label1: TLabel
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = EditServerIP
@@ -81,24 +65,13 @@ object MainForm: TMainForm
     BorderSpacing.Left = 8
     Caption = 'Server UDP port'
   end
-  object Label3: TLabel
-    AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = EditTCPPort
-    AnchorSideTop.Side = asrCenter
-    Left = 8
-    Height = 17
-    Top = 100
-    Width = 94
-    BorderSpacing.Left = 8
-    Caption = 'Server TCP port'
-  end
   object Label4: TLabel
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = MaskBox
     AnchorSideTop.Side = asrCenter
     Left = 8
     Height = 17
-    Top = 141
+    Top = 100
     Width = 71
     BorderSpacing.Left = 8
     Caption = 'Server Mask'
@@ -136,7 +109,7 @@ object MainForm: TMainForm
     Font.Name = 'Monospace'
     ParentFont = False
     ReadOnly = True
-    TabOrder = 9
+    TabOrder = 8
   end
   object StaticText1: TStaticText
     AnchorSideLeft.Control = Owner
@@ -154,7 +127,7 @@ object MainForm: TMainForm
     Font.Height = -11
     Font.Name = 'Sans'
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 9
   end
   object CopyBtn: TBitBtn
     AnchorSideLeft.Control = CreateBtn
@@ -168,7 +141,7 @@ object MainForm: TMainForm
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 2
     Caption = 'Copy URI to Clipboard'
-    TabOrder = 8
+    TabOrder = 7
     OnClick = CopyBtnClick
   end
   object Label5: TLabel
@@ -203,13 +176,13 @@ object MainForm: TMainForm
   object MaskBox: TComboBox
     AnchorSideLeft.Control = Label4
     AnchorSideLeft.Side = asrBottom
-    AnchorSideTop.Control = EditTCPPort
+    AnchorSideTop.Control = EditUDPPort
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = EditServerIP
     AnchorSideRight.Side = asrBottom
     Left = 84
     Height = 37
-    Top = 131
+    Top = 90
     Width = 298
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 5
@@ -225,7 +198,7 @@ object MainForm: TMainForm
       'https://www.wildberries.ru'
     )
     Sorted = True
-    TabOrder = 4
+    TabOrder = 3
     Text = 'https://www.apple.com'
   end
   object Label6: TLabel
@@ -234,7 +207,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     Left = 8
     Height = 17
-    Top = 193
+    Top = 152
     Width = 101
     BorderSpacing.Left = 8
     Caption = '---Client: Bypass'
@@ -246,7 +219,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrBottom
     Left = 114
     Height = 37
-    Top = 183
+    Top = 142
     Width = 94
     BorderSpacing.Left = 5
     BorderSpacing.Top = 15
@@ -261,21 +234,21 @@ object MainForm: TMainForm
       '.ir'
     )
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 4
     Text = '.ru'
   end
   object StartBtn: TSpeedButton
     AnchorSideLeft.Control = Shape1
     AnchorSideLeft.Side = asrBottom
-    AnchorSideTop.Control = EditLocalSocks
+    AnchorSideTop.Control = SpeedUPEdit
     AnchorSideTop.Side = asrBottom
     AnchorSideBottom.Side = asrBottom
     Left = 24
     Height = 37
-    Top = 270
+    Top = 273
     Width = 110
     BorderSpacing.Left = 5
-    BorderSpacing.Top = 8
+    BorderSpacing.Top = 10
     Caption = 'Start'
     OnClick = StartBtnClick
   end
@@ -286,7 +259,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     Left = 139
     Height = 37
-    Top = 270
+    Top = 273
     Width = 110
     BorderSpacing.Left = 5
     Caption = 'Stop'
@@ -300,11 +273,11 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     Left = 114
     Height = 37
-    Top = 225
+    Top = 184
     Width = 94
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
-    TabOrder = 6
+    TabOrder = 5
     Text = '1080'
     OnKeyPress = EditServerIPKeyPress
   end
@@ -314,7 +287,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     Left = 8
     Height = 12
-    Top = 282
+    Top = 285
     Width = 11
     BorderSpacing.Left = 8
     Brush.Color = clYellow
@@ -327,10 +300,10 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     Left = 8
     Height = 17
-    Top = 235
-    Width = 77
+    Top = 194
+    Width = 80
     BorderSpacing.Left = 8
-    Caption = 'SOCKS5 port'
+    Caption = 'Port: SOCKS5'
   end
   object Label8: TLabel
     AnchorSideTop.Control = EditLocalHTTP
@@ -338,7 +311,7 @@ object MainForm: TMainForm
     AnchorSideRight.Control = EditLocalHTTP
     Left = 249
     Height = 17
-    Top = 235
+    Top = 194
     Width = 34
     Anchors = [akTop, akRight]
     BorderSpacing.Right = 5
@@ -351,10 +324,10 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     Left = 288
     Height = 37
-    Top = 225
+    Top = 184
     Width = 94
     Anchors = [akTop, akRight]
-    TabOrder = 7
+    TabOrder = 6
     Text = '8889'
     OnKeyPress = EditServerIPKeyPress
   end
@@ -365,7 +338,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     Left = 213
     Height = 17
-    Top = 193
+    Top = 152
     Width = 66
     BorderSpacing.Left = 5
     Caption = '-----------'
@@ -512,6 +485,58 @@ object MainForm: TMainForm
       DCC77DDCC77DFCBFC4FF02F929A7AC117A260F0000000049454E44AE426082
     }
     Visible = False
+  end
+  object Label3: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = SpeedUPEdit
+    AnchorSideTop.Side = asrCenter
+    Left = 8
+    Height = 17
+    Top = 236
+    Width = 60
+    BorderSpacing.Left = 8
+    Caption = 'Speed: UP'
+  end
+  object Label10: TLabel
+    AnchorSideTop.Control = SpeedDownEdit
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = SpeedDownEdit
+    Left = 241
+    Height = 17
+    Top = 236
+    Width = 42
+    Anchors = [akTop, akRight]
+    BorderSpacing.Right = 5
+    Caption = 'DOWN'
+  end
+  object SpeedUPEdit: TEdit
+    AnchorSideLeft.Control = BypassBox
+    AnchorSideTop.Control = EditLocalSocks
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = BypassBox
+    AnchorSideRight.Side = asrBottom
+    Left = 114
+    Height = 37
+    Top = 226
+    Width = 94
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 5
+    TabOrder = 10
+    Text = '100'
+  end
+  object SpeedDownEdit: TEdit
+    AnchorSideLeft.Control = EditLocalHTTP
+    AnchorSideTop.Control = SpeedUPEdit
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = EditServerIP
+    AnchorSideRight.Side = asrBottom
+    Left = 288
+    Height = 37
+    Top = 226
+    Width = 94
+    Anchors = [akTop, akLeft, akRight]
+    TabOrder = 11
+    Text = '100'
   end
   object IniPropStorage1: TIniPropStorage
     StoredValues = <>

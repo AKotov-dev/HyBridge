@@ -15,10 +15,14 @@ type
   TMainForm = class(TForm)
     BarcodeQR1: TBarcodeQR;
     BypassBox: TComboBox;
+    SpeedUPEdit: TEdit;
+    SpeedDownEdit: TEdit;
     EditLocalSocks: TEdit;
     EditLocalHTTP: TEdit;
     Image1: TImage;
     IniPropStorage1: TIniPropStorage;
+    Label10: TLabel;
+    Label3: TLabel;
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
@@ -26,12 +30,10 @@ type
     MaskBox: TComboBox;
     CreateBtn: TBitBtn;
     CopyBtn: TBitBtn;
-    EditTCPPort: TEdit;
     EditUDPPort: TEdit;
     EditServerIP: TEdit;
     Label1: TLabel;
     Label2: TLabel;
-    Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
     Memo1: TMemo;
@@ -70,9 +72,10 @@ uses
 
   { TMainForm }
 
-//Получение URI
+// Получение URI
 function BuildHysteria2URI(Server: string; Port: string; Password: string;
-  ObfsType: string; ObfsPassword: string; Insecure: boolean; Name: string): string;
+  ObfsType: string; ObfsPassword: string; Insecure: boolean; UpMbps: string;
+  DownMbps: string; Name: string): string;
 var
   Params: string;
 begin
@@ -87,11 +90,19 @@ begin
   if ObfsPassword <> '' then
     Params := Params + 'obfs-password=' + ObfsPassword + '&';
 
+  if UpMbps <> '' then
+    Params := Params + 'upmbps=' + UpMbps + '&';
+
+  if DownMbps <> '' then
+    Params := Params + 'downmbps=' + DownMbps + '&';
+
   if Params.EndsWith('&') then
     Delete(Params, Length(Params), 1);
 
   Result := Format('hy2://%s@%s:%s/?%s#%s', [Password, Server, Port, Params, Name]);
 end;
+
+
 
 //Получение из YAML
 function GetNestedYAMLValue(const FileName: string; const Path: array of string): string;
@@ -245,7 +256,6 @@ begin
   end;
 end;
 
-
 //Создание конфига клиента
 procedure TMainForm.CreateClientConfig(AUTH_PASS, OBFS_PASS: string);
 var
@@ -302,6 +312,8 @@ begin
     Conf.Add('    "server": "' + EditServerIP.Text + '",');
     Conf.Add('    "server_port": ' + EditUDPPort.Text + ',');
     Conf.Add('    "password": "' + AUTH_PASS + '",');
+    Conf.Add('    "up_mbps": ' + SpeedUPEdit.Text + ',');
+    Conf.Add('    "down_mbps": ' + SpeedDownEdit.Text + ',');
     Conf.Add('');
     Conf.Add('    "tls": {');
     Conf.Add('      "enabled": true,');
@@ -338,7 +350,8 @@ begin
 
     //Получаем URI
     Memo1.Text := BuildHysteria2URI(EditServerIP.Text, EditUDPPort.Text,
-      AUTH_PASS, 'salamander', OBFS_PASS, True, 'HyBridge');
+      AUTH_PASS, 'salamander', OBFS_PASS, True, SpeedUpEdit.Text,
+      SpeedDownEdit.Text, 'HyBridge');
 
     //Показываем QR-код (LazBarCodes)
     BarCodeQR1.Text := Memo1.Text;
@@ -380,14 +393,19 @@ begin
     //--server--
     config := GetUserDir + '.config/hybridge/config/server/etc/hysteria/config.yaml';
     //server_port TCP
-    EditTCPPort.Text := GetNestedYAMLValue(config, ['tcp', 'listen']);
+    //EditTCPPort.Text := GetNestedYAMLValue(config, ['tcp', 'listen']);
 
     //Masquerade (Mask)
     MaskBox.Text := GetNestedYAMLValue(config, ['masquerade', 'proxy', 'url']);
 
     //Получаем URI
     Memo1.Text := BuildHysteria2URI(EditServerIP.Text, EditUDPPort.Text,
-      AUTH_PASS, 'salamander', OBFS_PASS, True, 'HyBridge');
+      AUTH_PASS, 'salamander', OBFS_PASS, True,          // Boolean, без кавычек
+      '50',          // UpMbps
+      '100',         // DownMbps
+      'HyBridge'     // Name
+      );
+
 
     //Показываем QR-код (LazBarCodes)
     BarCodeQR1.Text := Memo1.Text;
@@ -416,9 +434,9 @@ begin
   Application.ProcessMessages;
 
   if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
-    (Trim(EditTCPPort.Text) = '') or (Trim(MaskBox.Text) = '') or
-    (Trim(ByPassBox.Text) = '') or (Trim(EditLocalSocks.Text) = '') or
-    (Trim(EditLocalHTTP.Text) = '') then Exit;
+    (Trim(MaskBox.Text) = '') or (Trim(ByPassBox.Text) = '') or
+    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') or
+    (Trim(SpeedUPEdit.Text) = '') or (Trim(SpeedDownEdit.Text) = '') then Exit;
 
   if FileExists(GetUserDir + '.config/hybridge/config/server/etc/hysteria/cert.pem') then
     if MessageDlg(
@@ -450,9 +468,9 @@ begin
 
     //Конфиг сервера
     Conf.Add('listen: :' + EditUDPPort.Text);
-    Conf.Add('tcp:');
-    Conf.Add('  listen: :' + EditTCPPort.Text);
-    Conf.Add('  fallback: true');
+    //    Conf.Add('tcp:');
+    //    Conf.Add('  listen: :' + EditTCPPort.Text);
+    //    Conf.Add('  fallback: true');
     Conf.Add('');
     Conf.Add('tls:');
     Conf.Add('  cert: /etc/hysteria/cert.pem');
@@ -574,9 +592,9 @@ var
   config, AUTH_PASS, OBFS_PASS: string;
 begin
   if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
-    (Trim(EditTCPPort.Text) = '') or (Trim(MaskBox.Text) = '') or
-    (Trim(ByPassBox.Text) = '') or (Trim(EditLocalSocks.Text) = '') or
-    (Trim(EditLocalHTTP.Text) = '') then Exit;
+    (Trim(MaskBox.Text) = '') or (Trim(ByPassBox.Text) = '') or
+    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') or
+    (Trim(SpeedUPEdit.Text) = '') or (Trim(SpeedDownEdit.Text) = '') then Exit;
 
   config := GetUserDir + '.config/hybridge/config/client.json';
 
