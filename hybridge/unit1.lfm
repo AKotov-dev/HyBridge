@@ -523,6 +523,7 @@ object MainForm: TMainForm
     BorderSpacing.Top = 5
     TabOrder = 10
     Text = '100'
+    OnKeyPress = EditServerIPKeyPress
   end
   object SpeedDownEdit: TEdit
     AnchorSideLeft.Control = EditLocalHTTP
@@ -537,6 +538,7 @@ object MainForm: TMainForm
     Anchors = [akTop, akLeft, akRight]
     TabOrder = 11
     Text = '100'
+    OnKeyPress = EditServerIPKeyPress
   end
   object IniPropStorage1: TIniPropStorage
     StoredValues = <>
