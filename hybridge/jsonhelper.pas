@@ -6,7 +6,6 @@ uses
   Classes, SysUtils, fpjson, jsonparser;
 
 function GetJSONValue(const FileName, Path: string): string;
-procedure SetJSONValue(const FileName, Path, NewValue: string);
 
 implementation
 
@@ -18,19 +17,6 @@ begin
   try
     S.LoadFromFile(FileName);
     Result := GetJSON(S.Text) as TJSONObject;
-  finally
-    S.Free;
-  end;
-end;
-
-procedure SaveJSON(JSON: TJSONObject; const FileName: string);
-var
-  S: TStringList;
-begin
-  S := TStringList.Create;
-  try
-    S.Text := JSON.FormatJSON;
-    S.SaveToFile(FileName);
   finally
     S.Free;
   end;
@@ -119,71 +105,6 @@ begin
     Val := Navigate(JSON, Path, False);
     if Val <> nil then
       Result := Val.AsString;
-  finally
-    JSON.Free;
-  end;
-end;
-
-procedure SetJSONValue(const FileName, Path, NewValue: string);
-var
-  JSON: TJSONObject;
-  ParentPath, LastPart: string;
-  p: integer;
-  Parent: TJSONData;
-  Obj: TJSONObject;
-  Token: string;
-  Idx: integer;
-  Arr: TJSONArray;
-  HasIndex: boolean;
-begin
-  JSON := LoadJSON(FileName);
-  try
-    p := LastDelimiter('.', Path);
-
-    if p > 0 then
-    begin
-      ParentPath := Copy(Path, 1, p - 1);
-      LastPart := Copy(Path, p + 1, MaxInt);
-    end
-    else
-    begin
-      ParentPath := '';
-      LastPart := Path;
-    end;
-
-    if ParentPath = '' then
-      Parent := JSON
-    else
-      Parent := Navigate(JSON, ParentPath, True);
-
-    Token := LastPart;
-    HasIndex := ExtractIndex(Token, Idx);
-
-    if Parent.JSONType = jtObject then
-    begin
-      Obj := TJSONObject(Parent);
-
-      if HasIndex then
-      begin
-        if Obj.Find(Token) = nil then
-          Obj.Add(Token, TJSONArray.Create);
-
-        Arr := TJSONArray(Obj.Find(Token));
-
-        while Arr.Count <= Idx do
-          Arr.Add('');
-
-        Arr.Strings[Idx] := NewValue;
-      end
-      else
-      begin
-        Obj.Delete(Token);
-        Obj.Add(Token, NewValue);
-      end;
-    end;
-
-    SaveJSON(JSON, FileName);
-
   finally
     JSON.Free;
   end;

@@ -545,7 +545,6 @@ begin
   end;
 end;
 
-
 //Ввод цифр и точек
 procedure TMainForm.EditServerIPKeyPress(Sender: TObject; var Key: char);
 begin

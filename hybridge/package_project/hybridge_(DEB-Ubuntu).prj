@@ -76,4 +76,5 @@ toolversion=4.4
 [INFO]
 0=v0.1
 1=+ Initial Release
-2=+ RPM & DEB packages
+2=+ sing-box-1.12.22
+3=+ Self-contained RPM & DEB packages
