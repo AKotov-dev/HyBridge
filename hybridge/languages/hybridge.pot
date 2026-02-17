@@ -80,14 +80,18 @@ msgctxt "tmainform.speedauto.caption"
 msgid "Speed: UP"
 msgstr ""
 
-#: tmainform.speeddownedit.text
-msgctxt "tmainform.speeddownedit.text"
-msgid "100"
+#: tmainform.speedauto.hint
+msgid "Manual/Auto"
 msgstr ""
 
-#: tmainform.speedupedit.text
-msgctxt "tmainform.speedupedit.text"
-msgid "100"
+#: tmainform.speeddownedit.hint
+msgctxt "tmainform.speeddownedit.hint"
+msgid "Mbps"
+msgstr ""
+
+#: tmainform.speedupedit.hint
+msgctxt "tmainform.speedupedit.hint"
+msgid "Mbps"
 msgstr ""
 
 #: tmainform.startbtn.caption

@@ -372,7 +372,7 @@ end;
 //Загрузка конфигурации клиента и байпас
 procedure TMainForm.LoadConfiguration;
 var
-  AUTH_PASS, OBFS_PASS, S, config: string;
+  AUTH_PASS, OBFS_PASS, config: string;
 begin
   // Если конфигурация клиента существует - читаем настройки в поля
   config := GetUserDir + '.config/hybridge/config/client.json';
@@ -399,17 +399,14 @@ begin
     // SpeedDown
     SpeedDownEdit.Text := GetJSONValue(config, 'outbounds[0].down_mbps');
     //Speed Auto/Manual
-    if (SpeedUPEdit.Text = '') or (SpeedDownEdit.Text = '') then SpeedAuto.Checked := False
+    if (SpeedUPEdit.Text = '') or (SpeedDownEdit.Text = '') then
+      SpeedAuto.Checked := False
     else
       SpeedAuto.Checked := True;
-
 
     AUTH_PASS := GetJSONValue(config, 'outbounds[0].password');
 
     OBFS_PASS := GetJSONValue(config, 'outbounds[0].obfs.password');
-
-
-
 
     //--server--
     config := GetUserDir + '.config/hybridge/config/server/etc/hysteria/config.yaml';
@@ -454,6 +451,9 @@ begin
   if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
     (Trim(MaskBox.Text) = '') or (Trim(ByPassBox.Text) = '') or
     (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') then Exit;
+
+  if SpeedAuto.Checked and ((Trim(SpeedUPEdit.Text) = '') or
+    (Trim(SpeedDownEdit.Text) = '')) then Exit;
 
   if FileExists(GetUserDir + '.config/hybridge/config/server/etc/hysteria/cert.pem') then
     if MessageDlg(
@@ -609,6 +609,8 @@ begin
   begin
     SpeedUpEdit.Enabled := True;
     SpeedDownEdit.Enabled := True;
+    if SpeedUpEdit.Text = '' then SpeedUpEdit.Text := '50';
+    if SpeedDownEdit.Text = '' then SpeedDownEdit.Text := '100';
   end
   else
   begin
@@ -625,6 +627,9 @@ begin
   if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
     (Trim(MaskBox.Text) = '') or (Trim(ByPassBox.Text) = '') or
     (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') then Exit;
+
+  if SpeedAuto.Checked and ((Trim(SpeedUPEdit.Text) = '') or
+    (Trim(SpeedDownEdit.Text) = '')) then Exit;
 
   config := GetUserDir + '.config/hybridge/config/client.json';
 

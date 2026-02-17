@@ -516,8 +516,8 @@ object MainForm: TMainForm
     Width = 94
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
+    Enabled = False
     TabOrder = 7
-    Text = '100'
     OnKeyPress = EditServerIPKeyPress
   end
   object SpeedDownEdit: TEdit
@@ -531,8 +531,8 @@ object MainForm: TMainForm
     Top = 226
     Width = 94
     Anchors = [akTop, akLeft, akRight]
+    Enabled = False
     TabOrder = 8
-    Text = '100'
     OnKeyPress = EditServerIPKeyPress
   end
   object SpeedAuto: TCheckBox
@@ -541,10 +541,13 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     Left = 8
     Height = 32
+    Hint = 'Manual/Auto'
     Top = 228
     Width = 94
     BorderSpacing.Left = 8
     Caption = 'Speed: UP'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 12
     OnChange = SpeedAutoChange
   end

@@ -90,15 +90,19 @@ msgctxt "tmainform.speedauto.caption"
 msgid "Speed: UP"
 msgstr ""
 
-#: tmainform.speeddownedit.text
-msgctxt "tmainform.speeddownedit.text"
-msgid "100"
-msgstr ""
+#: tmainform.speedauto.hint
+msgid "Manual/Auto"
+msgstr "Ручной/Авто"
 
-#: tmainform.speedupedit.text
-msgctxt "tmainform.speedupedit.text"
-msgid "100"
-msgstr ""
+#: tmainform.speeddownedit.hint
+msgctxt "tmainform.speeddownedit.hint"
+msgid "Mbps"
+msgstr "Мбит/с"
+
+#: tmainform.speedupedit.hint
+msgctxt "tmainform.speedupedit.hint"
+msgid "Mbps"
+msgstr "Мбит/с"
 
 #: tmainform.startbtn.caption
 msgid "Start"
@@ -111,4 +115,3 @@ msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2026   https://git
 #: tmainform.stopbtn.caption
 msgid "Stop"
 msgstr "Стоп"
-

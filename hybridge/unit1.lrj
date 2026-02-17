@@ -20,7 +20,8 @@
 {"hash":244665,"name":"tmainform.editlocalhttp.text","sourcebytes":[56,56,56,57],"value":"8889"},
 {"hash":265289741,"name":"tmainform.label9.caption","sourcebytes":[45,45,45,45,45,45,45,45,45,45,45],"value":"-----------"},
 {"hash":300222,"name":"tmainform.label10.caption","sourcebytes":[68,79,87,78],"value":"DOWN"},
-{"hash":13360,"name":"tmainform.speedupedit.text","sourcebytes":[49,48,48],"value":"100"},
-{"hash":13360,"name":"tmainform.speeddownedit.text","sourcebytes":[49,48,48],"value":"100"},
+{"hash":342387,"name":"tmainform.speedupedit.hint","sourcebytes":[77,98,112,115],"value":"Mbps"},
+{"hash":342387,"name":"tmainform.speeddownedit.hint","sourcebytes":[77,98,112,115],"value":"Mbps"},
+{"hash":130025759,"name":"tmainform.speedauto.hint","sourcebytes":[77,97,110,117,97,108,47,65,117,116,111],"value":"Manual/Auto"},
 {"hash":196583360,"name":"tmainform.speedauto.caption","sourcebytes":[83,112,101,101,100,58,32,85,80],"value":"Speed: UP"}
 ]}
