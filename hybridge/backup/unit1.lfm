@@ -512,11 +512,14 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     Left = 114
     Height = 37
+    Hint = 'Mbps'
     Top = 226
     Width = 94
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
     Enabled = False
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 7
     OnKeyPress = EditServerIPKeyPress
   end
@@ -528,10 +531,13 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     Left = 288
     Height = 37
+    Hint = 'Mbps'
     Top = 226
     Width = 94
     Anchors = [akTop, akLeft, akRight]
     Enabled = False
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 8
     OnKeyPress = EditServerIPKeyPress
   end

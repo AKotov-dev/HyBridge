@@ -460,6 +460,9 @@ begin
       'Конфигурации клиента и сервера уже созданы. Пересоздать?',
       mtWarning, [mbYes, mbNo], 0) <> mrYes then Exit;
 
+  //Останавливаем сервис
+  StopBtn.Click;
+
   //Очищаем рабочий каталог рекурсивно
   StartProcess('[ -d ~/.config/hybridge/config ] && rm -rf ~/.config/hybridge/config');
 
@@ -533,7 +536,6 @@ begin
       CopyFile(GetUserDir + '.config/hybridge/config.tar.gz',
         SaveDialog1.FileName, [cffOverwriteFile]);
     end;
-
 
     if FileExists(GetUserDir + '.config/hybridge/config/client.json') then
       StartBtn.Enabled := True;
