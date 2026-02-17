@@ -57,10 +57,6 @@ msgstr ""
 msgid "Server UDP port"
 msgstr "UDP порт сервера"
 
-#: tmainform.label3.caption
-msgid "Speed: UP"
-msgstr "Скорость: UP"
-
 #: tmainform.label4.caption
 msgid "Server Mask"
 msgstr "Маска сервера"
@@ -89,6 +85,11 @@ msgstr ""
 msgid "https://www.apple.com"
 msgstr ""
 
+#: tmainform.speedauto.caption
+msgctxt "tmainform.speedauto.caption"
+msgid "Speed: UP"
+msgstr ""
+
 #: tmainform.speeddownedit.text
 msgctxt "tmainform.speeddownedit.text"
 msgid "100"
@@ -110,3 +111,4 @@ msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2026   https://git
 #: tmainform.stopbtn.caption
 msgid "Stop"
 msgstr "Стоп"
+

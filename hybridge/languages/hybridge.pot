@@ -47,10 +47,6 @@ msgstr ""
 msgid "Server UDP port"
 msgstr ""
 
-#: tmainform.label3.caption
-msgid "Speed: UP"
-msgstr ""
-
 #: tmainform.label4.caption
 msgid "Server Mask"
 msgstr ""
@@ -77,6 +73,11 @@ msgstr ""
 
 #: tmainform.maskbox.text
 msgid "https://www.apple.com"
+msgstr ""
+
+#: tmainform.speedauto.caption
+msgctxt "tmainform.speedauto.caption"
+msgid "Speed: UP"
 msgstr ""
 
 #: tmainform.speeddownedit.text

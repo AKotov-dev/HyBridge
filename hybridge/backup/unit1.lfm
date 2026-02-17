@@ -109,7 +109,7 @@ object MainForm: TMainForm
     Font.Name = 'Monospace'
     ParentFont = False
     ReadOnly = True
-    TabOrder = 8
+    TabOrder = 10
   end
   object StaticText1: TStaticText
     AnchorSideLeft.Control = Owner
@@ -127,7 +127,7 @@ object MainForm: TMainForm
     Font.Height = -11
     Font.Name = 'Sans'
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 11
   end
   object CopyBtn: TBitBtn
     AnchorSideLeft.Control = CreateBtn
@@ -141,7 +141,7 @@ object MainForm: TMainForm
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 2
     Caption = 'Copy URI to Clipboard'
-    TabOrder = 7
+    TabOrder = 9
     OnClick = CopyBtnClick
   end
   object Label5: TLabel
@@ -492,17 +492,6 @@ object MainForm: TMainForm
     }
     Visible = False
   end
-  object Label3: TLabel
-    AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = SpeedUPEdit
-    AnchorSideTop.Side = asrCenter
-    Left = 8
-    Height = 17
-    Top = 236
-    Width = 60
-    BorderSpacing.Left = 8
-    Caption = 'Speed: UP'
-  end
   object Label10: TLabel
     AnchorSideTop.Control = SpeedDownEdit
     AnchorSideTop.Side = asrCenter
@@ -527,7 +516,7 @@ object MainForm: TMainForm
     Width = 94
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
-    TabOrder = 10
+    TabOrder = 7
     Text = '100'
     OnKeyPress = EditServerIPKeyPress
   end
@@ -542,9 +531,22 @@ object MainForm: TMainForm
     Top = 226
     Width = 94
     Anchors = [akTop, akLeft, akRight]
-    TabOrder = 11
+    TabOrder = 8
     Text = '100'
     OnKeyPress = EditServerIPKeyPress
+  end
+  object SpeedAuto: TCheckBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = SpeedUPEdit
+    AnchorSideTop.Side = asrCenter
+    Left = 8
+    Height = 32
+    Top = 228
+    Width = 94
+    BorderSpacing.Left = 8
+    Caption = 'Speed: UP'
+    TabOrder = 12
+    OnChange = SpeedAutoChange
   end
   object IniPropStorage1: TIniPropStorage
     StoredValues = <>

@@ -19,8 +19,8 @@
 {"hash":317840,"name":"tmainform.label8.caption","sourcebytes":[72,84,84,80],"value":"HTTP"},
 {"hash":244665,"name":"tmainform.editlocalhttp.text","sourcebytes":[56,56,56,57],"value":"8889"},
 {"hash":265289741,"name":"tmainform.label9.caption","sourcebytes":[45,45,45,45,45,45,45,45,45,45,45],"value":"-----------"},
-{"hash":196583360,"name":"tmainform.label3.caption","sourcebytes":[83,112,101,101,100,58,32,85,80],"value":"Speed: UP"},
 {"hash":300222,"name":"tmainform.label10.caption","sourcebytes":[68,79,87,78],"value":"DOWN"},
 {"hash":13360,"name":"tmainform.speedupedit.text","sourcebytes":[49,48,48],"value":"100"},
-{"hash":13360,"name":"tmainform.speeddownedit.text","sourcebytes":[49,48,48],"value":"100"}
+{"hash":13360,"name":"tmainform.speeddownedit.text","sourcebytes":[49,48,48],"value":"100"},
+{"hash":196583360,"name":"tmainform.speedauto.caption","sourcebytes":[83,112,101,101,100,58,32,85,80],"value":"Speed: UP"}
 ]}

@@ -492,17 +492,6 @@ object MainForm: TMainForm
     }
     Visible = False
   end
-  object Label3: TLabel
-    AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = SpeedUPEdit
-    AnchorSideTop.Side = asrCenter
-    Left = 8
-    Height = 17
-    Top = 236
-    Width = 60
-    BorderSpacing.Left = 8
-    Caption = 'Speed: UP'
-  end
   object Label10: TLabel
     AnchorSideTop.Control = SpeedDownEdit
     AnchorSideTop.Side = asrCenter
@@ -545,6 +534,19 @@ object MainForm: TMainForm
     TabOrder = 8
     Text = '100'
     OnKeyPress = EditServerIPKeyPress
+  end
+  object SpeedAuto: TCheckBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = SpeedUPEdit
+    AnchorSideTop.Side = asrCenter
+    Left = 8
+    Height = 32
+    Top = 228
+    Width = 94
+    BorderSpacing.Left = 8
+    Caption = 'Speed: UP'
+    TabOrder = 12
+    OnChange = SpeedAutoChange
   end
   object IniPropStorage1: TIniPropStorage
     StoredValues = <>

@@ -15,6 +15,7 @@ type
   TMainForm = class(TForm)
     BarcodeQR1: TBarcodeQR;
     BypassBox: TComboBox;
+    SpeedAuto: TCheckBox;
     SpeedUPEdit: TEdit;
     SpeedDownEdit: TEdit;
     EditLocalSocks: TEdit;
@@ -22,7 +23,6 @@ type
     Image1: TImage;
     IniPropStorage1: TIniPropStorage;
     Label10: TLabel;
-    Label3: TLabel;
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
@@ -47,6 +47,7 @@ type
     procedure EditServerIPKeyPress(Sender: TObject; var Key: char);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure SpeedAutoChange(Sender: TObject);
     procedure StartBtnClick(Sender: TObject);
     procedure StartProcess(command: string);
     procedure StopBtnClick(Sender: TObject);
@@ -310,8 +311,14 @@ begin
     Conf.Add('    "server": "' + EditServerIP.Text + '",');
     Conf.Add('    "server_port": ' + EditUDPPort.Text + ',');
     Conf.Add('    "password": "' + AUTH_PASS + '",');
-    Conf.Add('    "up_mbps": ' + SpeedUPEdit.Text + ',');
-    Conf.Add('    "down_mbps": ' + SpeedDownEdit.Text + ',');
+
+    //Скорость Manual/Auto
+    if SpeedAuto.Checked then
+    begin
+      Conf.Add('    "up_mbps": ' + SpeedUPEdit.Text + ',');
+      Conf.Add('    "down_mbps": ' + SpeedDownEdit.Text + ',');
+    end;
+
     Conf.Add('');
     Conf.Add('    "tls": {');
     Conf.Add('      "enabled": true,');
@@ -347,9 +354,13 @@ begin
     Conf.SaveToFile(GetUserDir + '.config/hybridge/config/client.json');
 
     //Получаем URI
-    Memo1.Text := BuildHysteria2URI(EditServerIP.Text, EditUDPPort.Text,
-      AUTH_PASS, 'salamander', OBFS_PASS, True, SpeedUpEdit.Text,
-      SpeedDownEdit.Text, 'HyBridge');
+    if SpeedAuto.Checked then
+      Memo1.Text := BuildHysteria2URI(EditServerIP.Text, EditUDPPort.Text,
+        AUTH_PASS, 'salamander', OBFS_PASS, True, SpeedUpEdit.Text,
+        SpeedDownEdit.Text, 'HyBridge')
+    else
+      Memo1.Text := BuildHysteria2URI(EditServerIP.Text, EditUDPPort.Text,
+        AUTH_PASS, 'salamander', OBFS_PASS, True, '', '', 'HyBridge');
 
     //Показываем QR-код (LazBarCodes)
     BarCodeQR1.Text := Memo1.Text;
@@ -361,7 +372,7 @@ end;
 //Загрузка конфигурации клиента и байпас
 procedure TMainForm.LoadConfiguration;
 var
-  AUTH_PASS, OBFS_PASS, config: string;
+  AUTH_PASS, OBFS_PASS, S, config: string;
 begin
   // Если конфигурация клиента существует - читаем настройки в поля
   config := GetUserDir + '.config/hybridge/config/client.json';
@@ -387,10 +398,18 @@ begin
     SpeedUPEdit.Text := GetJSONValue(config, 'outbounds[0].up_mbps');
     // SpeedDown
     SpeedDownEdit.Text := GetJSONValue(config, 'outbounds[0].down_mbps');
+    //Speed Auto/Manual
+    if (SpeedUPEdit.Text = '') or (SpeedDownEdit.Text = '') then SpeedAuto.Checked := False
+    else
+      SpeedAuto.Checked := True;
+
 
     AUTH_PASS := GetJSONValue(config, 'outbounds[0].password');
 
     OBFS_PASS := GetJSONValue(config, 'outbounds[0].obfs.password');
+
+
+
 
     //--server--
     config := GetUserDir + '.config/hybridge/config/server/etc/hysteria/config.yaml';
@@ -407,10 +426,8 @@ begin
       'HyBridge'     // Name
       );
 
-
     //Показываем QR-код (LazBarCodes)
     BarCodeQR1.Text := Memo1.Text;
-
 
     StartBtn.Enabled := True;
   end
@@ -436,8 +453,7 @@ begin
 
   if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
     (Trim(MaskBox.Text) = '') or (Trim(ByPassBox.Text) = '') or
-    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') or
-    (Trim(SpeedUPEdit.Text) = '') or (Trim(SpeedDownEdit.Text) = '') then Exit;
+    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') then Exit;
 
   if FileExists(GetUserDir + '.config/hybridge/config/server/etc/hysteria/cert.pem') then
     if MessageDlg(
@@ -587,6 +603,20 @@ begin
   PortScan.Create(False);
 end;
 
+procedure TMainForm.SpeedAutoChange(Sender: TObject);
+begin
+  if SpeedAuto.Checked then
+  begin
+    SpeedUpEdit.Enabled := True;
+    SpeedDownEdit.Enabled := True;
+  end
+  else
+  begin
+    SpeedUpEdit.Enabled := False;
+    SpeedDownEdit.Enabled := False;
+  end;
+end;
+
 //Start
 procedure TMainForm.StartBtnClick(Sender: TObject);
 var
@@ -594,8 +624,7 @@ var
 begin
   if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
     (Trim(MaskBox.Text) = '') or (Trim(ByPassBox.Text) = '') or
-    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') or
-    (Trim(SpeedUPEdit.Text) = '') or (Trim(SpeedDownEdit.Text) = '') then Exit;
+    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') then Exit;
 
   config := GetUserDir + '.config/hybridge/config/client.json';
 
