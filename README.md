@@ -20,6 +20,6 @@ Configurations/Certificates: ~/.config/hybridge/config
 
 **Note:** The speed limit settings (UP/DOWN) are useful when configuring mobile devices or connections with asymmetric bandwidth. If you are unsure, leave them unchecked to use `Auto` mode, which allows the client to automatically adapt to the available network capacity.  
   
-The system proxy is configured automatically. Supported DEs: Budgie, GNOME, MATE, KDE. XFCE and LXDE support system proxy mode when [XDE-Proxy-GUI](https://github.com/AKotov-dev/xde-proxy-gui) is installed.  
+The system proxy is configured automatically. Supported DEs: Budgie, GNOME, MATE, Cinnamon, KDE. XFCE and LXDE support system proxy mode when [XDE-Proxy-GUI](https://github.com/AKotov-dev/xde-proxy-gui) is installed.  
   
 **Useful links:** [hysteria](https://github.com/apernet/hysteria), [sing-box](https://github.com/SagerNet/sing-box).
