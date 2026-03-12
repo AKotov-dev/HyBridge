@@ -18,7 +18,7 @@ Configurations/Certificates: ~/.config/hybridge/config
 + Activate the Hysteria server on your VPS: `systemctl restart hysteria; systemctl enable hysteria`
 + Click the `Start` button in the `HyBridge` client window and access the open internet
 
-**Note:** The speed limit settings (UP/DOWN) are useful when configuring mobile devices or connections with asymmetric bandwidth. If you are unsure, leave them unchecked to use `Auto` mode, which allows the client to automatically adapt to the available network capacity.  
+The speed limit settings (UP/DOWN) are useful when configuring mobile devices or connections with asymmetric bandwidth. If you are unsure, leave them unchecked to use `Auto` mode, which allows the client to automatically adapt to the available network capacity.  
   
 The system proxy is configured automatically. Supported DEs: Budgie, GNOME, MATE, Cinnamon, KDE. XFCE and LXDE support system proxy mode when [XDE-Proxy-GUI](https://github.com/AKotov-dev/xde-proxy-gui) is installed.  
   
