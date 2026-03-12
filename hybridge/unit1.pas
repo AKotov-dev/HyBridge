@@ -488,9 +488,6 @@ begin
 
     //Конфиг сервера
     Conf.Add('listen: :' + EditUDPPort.Text);
-    //    Conf.Add('tcp:');
-    //    Conf.Add('  listen: :' + EditTCPPort.Text);
-    //    Conf.Add('  fallback: true');
     Conf.Add('');
     Conf.Add('tls:');
     Conf.Add('  cert: /etc/hysteria/cert.pem');
@@ -510,6 +507,15 @@ begin
     Conf.Add('  proxy:');
     Conf.Add('    url: ' + MaskBox.Text);
     Conf.Add('    rewriteHost: true');
+    Conf.Add('');
+    Conf.Add('quic:');
+    Conf.Add('  maxIdleTimeout: 15s');
+    Conf.Add('  initStreamReceiveWindow: 8388608');
+    Conf.Add('  maxStreamReceiveWindow: 8388608');
+    Conf.Add('  initConnReceiveWindow: 20971520');
+    Conf.Add('  maxConnReceiveWindow: 20971520');
+    Conf.Add('  maxIncomingStreams: 1024');
+    Conf.Add('  disablePathMTUDiscovery: false');
 
     //Сохраняем конфиг сервера
     Conf.SaveToFile(GetUserDir +

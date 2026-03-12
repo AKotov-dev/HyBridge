@@ -74,7 +74,16 @@ devtool=Lazarus
 toolversion=4.4
 
 [INFO]
-0=v0.1
-1=+ Initial Release
-2=+ sing-box-1.12.22
-3=+ Self-contained RPM & DEB packages
+0=v0.3
+1=sing-box-1.13.2
+2=Server: added QUIC parameters
+3=Self-contained RPM & DEB packages
+4=
+5=v0.2
+6=sing-box-1.13.0
+7=Self-contained RPM & DEB packages
+8=
+9=v0.1
+10=+ Initial Release
+11=+ sing-box-1.12.22
+12=+ Self-contained RPM & DEB packages
