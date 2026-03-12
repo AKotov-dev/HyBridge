@@ -300,6 +300,7 @@ begin
     Conf.Add('  {');
     Conf.Add('    "type": "http",');
     Conf.Add('    "tag": "http-in",');
+    Conf.Add('    "tcp_fast_open": true,');
     Conf.Add('    "listen": "127.0.0.1",');
     Conf.Add('    "listen_port": ' + EditLocalHTTP.Text);
     Conf.Add('  }');
@@ -442,6 +443,8 @@ begin
 end;
 
 //Создать конфиги, сертификаты и QR-код
+// https://v2.hysteria.network/docs/advanced/Full-Client-Config/
+// https://v2.hysteria.network/docs/advanced/Full-Server-Config/
 procedure TMainForm.CreateBtnClick(Sender: TObject);
 var
   Conf: TStringList;

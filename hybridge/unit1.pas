@@ -300,6 +300,7 @@ begin
     Conf.Add('  {');
     Conf.Add('    "type": "http",');
     Conf.Add('    "tag": "http-in",');
+    Conf.Add('    "tcp_fast_open": true,');
     Conf.Add('    "listen": "127.0.0.1",');
     Conf.Add('    "listen_port": ' + EditLocalHTTP.Text);
     Conf.Add('  }');
@@ -512,7 +513,7 @@ begin
     Conf.Add('    rewriteHost: true');
     Conf.Add('');
     Conf.Add('quic:');
-    Conf.Add('  maxIdleTimeout: 15s');
+    Conf.Add('  maxIdleTimeout: 30s');
     Conf.Add('  initStreamReceiveWindow: 8388608');
     Conf.Add('  maxStreamReceiveWindow: 8388608');
     Conf.Add('  initConnReceiveWindow: 20971520');
