@@ -513,7 +513,7 @@ begin
     Conf.Add('    rewriteHost: true');
     Conf.Add('');
     Conf.Add('quic:');
-    Conf.Add('  maxIdleTimeout: 15s');
+    Conf.Add('  maxIdleTimeout: 30s');
     Conf.Add('  initStreamReceiveWindow: 8388608');
     Conf.Add('  maxStreamReceiveWindow: 8388608');
     Conf.Add('  initConnReceiveWindow: 20971520');
