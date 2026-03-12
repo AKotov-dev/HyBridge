@@ -256,6 +256,7 @@ begin
 end;
 
 //Создание конфига клиента
+// https://v2.hysteria.network/docs/advanced/Full-Client-Config/
 procedure TMainForm.CreateClientConfig(AUTH_PASS, OBFS_PASS: string);
 var
   Conf: TStringList;
@@ -441,6 +442,8 @@ begin
 end;
 
 //Создать конфиги, сертификаты и QR-код
+// https://v2.hysteria.network/docs/advanced/Full-Client-Config/
+// https://v2.hysteria.network/docs/advanced/Full-Server-Config/
 procedure TMainForm.CreateBtnClick(Sender: TObject);
 var
   Conf: TStringList;

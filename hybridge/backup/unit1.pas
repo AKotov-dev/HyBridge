@@ -256,6 +256,7 @@ begin
 end;
 
 //Создание конфига клиента
+// https://v2.hysteria.network/docs/advanced/Full-Client-Config/
 procedure TMainForm.CreateClientConfig(AUTH_PASS, OBFS_PASS: string);
 var
   Conf: TStringList;
@@ -516,8 +517,6 @@ begin
     Conf.Add('  maxConnReceiveWindow: 20971520');
     Conf.Add('  maxIncomingStreams: 1024');
     Conf.Add('  disablePathMTUDiscovery: false');
-    //Формат *.yaml требует перевод строки
-    Conf.Add('');
 
     //Сохраняем конфиг сервера
     Conf.SaveToFile(GetUserDir +
