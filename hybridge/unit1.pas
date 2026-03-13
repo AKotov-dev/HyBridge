@@ -277,12 +277,17 @@ begin
     Conf.Add('      "server": "1.0.0.1"');
     Conf.Add('    },');
     Conf.Add('    {');
+    Conf.Add('      "tag": "remote-fallback",');
+    Conf.Add('      "type": "udp",');
+    Conf.Add('      "server": "9.9.9.9"');
+    Conf.Add('    },');
+    Conf.Add('    {');
     Conf.Add('      "tag": "local",');
     Conf.Add('      "type": "udp",');
     Conf.Add('      "server": "8.8.4.4"');
     Conf.Add('    }');
     Conf.Add('  ],');
-    Conf.Add('  "rules": [');
+    Conf.Add('"rules": [');
     Conf.Add('    {');
     Conf.Add('      "domain_suffix": ["' + BypassBox.Text + '"],');
     Conf.Add('      "server": "local"');
