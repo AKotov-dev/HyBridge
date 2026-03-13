@@ -23,3 +23,5 @@ for uid_dir in /run/user/*; do
         '
     fi
 done
+
+exit 0
