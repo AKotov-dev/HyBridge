@@ -287,7 +287,8 @@ begin
     Conf.Add('      "server": "8.8.4.4"');
     Conf.Add('    }');
     Conf.Add('  ],');
-    Conf.Add('  "rules": [');
+    Conf.Add('');
+    Conf.Add('"rules": [');
     Conf.Add('    {');
     Conf.Add('      "domain_suffix": ["' + BypassBox.Text + '"],');
     Conf.Add('      "server": "local"');
