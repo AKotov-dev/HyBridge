@@ -22,6 +22,6 @@ The speed limit settings (UP/DOWN) are useful when configuring mobile devices or
   
 The system proxy is configured automatically. Supported DEs: Budgie, GNOME, MATE, Cinnamon, KDE. XFCE and LXDE support system proxy mode when [XDE-Proxy-GUI](https://github.com/AKotov-dev/xde-proxy-gui) is installed.  
   
- If you experience problems with YouTube playback, disable QUIC in your Chromium-based browser. Open `chrome://flags/#enable-quic`, set **Experimental QUIC protocol** to **Disabled**, and restart the browser.
+ If you experience problems with YouTube playback, disable QUIC in your Chromium-based browser. Open `chrome://flags/#enable-quic`, set **Experimental QUIC protocol** to **Disabled** or try disabling your ad blocker (UBlock, Brave Shield, etc.) and restart the browser.
   
 **Useful links:** [hysteria](https://github.com/apernet/hysteria), [sing-box](https://github.com/SagerNet/sing-box).
