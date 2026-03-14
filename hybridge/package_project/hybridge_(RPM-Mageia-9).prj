@@ -48,16 +48,14 @@ deb=0
 2=/usr/share/icons/hybridge.png
 3=/etc/systemd/user/hybridge.service
 4=/usr/share/applications/hybridge.desktop
-5=/etc/systemd/system/hybridge-restart.service
-6=/etc/systemd/system-sleep/hybridge-restart.sh
-7=/usr/share/hybridge/
-8=/usr/share/doc/hybridge/
+5=/usr/lib/systemd/system-sleep/hybridge-restart
+6=/usr/share/hybridge/
+7=/usr/share/doc/hybridge/
 
 [AFTERINSTALL]
 0=#!/bin/bash
 1=
 2=systemctl daemon-reload
-3=systemctl enable hybridge-restart.service
 
 [AFTERREMOVE]
 0=#!/bin/bash
@@ -81,7 +79,7 @@ toolversion=4.4
 1=sing-box-1.13.2
 2=Client: Improved configuration
 3=Server: added QUIC parameters
-4=Restart after sleep, suspend, hibernate
+4=Restart after suspend & hibernate
 5=Self-contained RPM & DEB packages
 6=
 7=v0.2

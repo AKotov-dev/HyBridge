@@ -2,7 +2,7 @@
 name=hybridge
 
 [VERSION]
-version=0.1
+version=0.3
 
 [RELEASE]
 release=0.mrx10
@@ -48,8 +48,9 @@ deb=1
 2=/usr/share/icons/hybridge.png
 3=/etc/systemd/user/hybridge.service
 4=/usr/share/applications/hybridge.desktop
-5=/usr/share/hybridge/
-6=/usr/share/doc/hybridge/
+5=/usr/lib/systemd/system-sleep/hybridge-restart
+6=/usr/share/hybridge/
+7=/usr/share/doc/hybridge/
 
 [AFTERINSTALL]
 0=#!/bin/bash
@@ -78,13 +79,14 @@ toolversion=4.4
 1=sing-box-1.13.2
 2=Client: Improved configuration
 3=Server: added QUIC parameters
-4=Self-contained RPM & DEB packages
-5=
-6=v0.2
-7=sing-box-1.13.0
-8=Self-contained RPM & DEB packages
-9=
-10=v0.1
-11=+ Initial Release
-12=+ sing-box-1.12.22
-13=+ Self-contained RPM & DEB packages
+4=Restart after suspend & hibernate
+5=Self-contained RPM & DEB packages
+6=
+7=v0.2
+8=sing-box-1.13.0
+9=Self-contained RPM & DEB packages
+10=
+11=v0.1
+12=+ Initial Release
+13=+ sing-box-1.12.22
+14=+ Self-contained RPM & DEB packages
