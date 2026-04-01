@@ -67,7 +67,7 @@ var
 implementation
 
 uses
-  portscan_trd, JSONHelper;
+  service_state_trd, JSONHelper;
 
   {$R *.lfm}
 
@@ -617,7 +617,7 @@ begin
   LoadConfiguration;
 
   //Запускаем поток сканирования порта
-  PortScan.Create(False);
+  ServiceState.Create(False);
 end;
 
 procedure TMainForm.SpeedAutoChange(Sender: TObject);

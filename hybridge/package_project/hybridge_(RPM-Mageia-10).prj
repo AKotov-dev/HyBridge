@@ -2,7 +2,7 @@
 name=hybridge
 
 [VERSION]
-version=0.3
+version=0.4
 
 [RELEASE]
 release=0.mrx10
@@ -47,10 +47,9 @@ deb=0
 1=/usr/share/icons/hybridge.png
 2=/etc/systemd/user/hybridge.service
 3=/usr/share/applications/hybridge.desktop
-4=/usr/lib/systemd/system-sleep/hybridge-restart
-5=/opt/hybridge/
-6=/usr/share/hybridge/
-7=/usr/share/doc/hybridge/
+4=/opt/hybridge/
+5=/usr/share/hybridge/
+6=/usr/share/doc/hybridge/
 
 [AFTERINSTALL]
 0=#!/bin/bash
@@ -75,18 +74,23 @@ devtool=Lazarus
 toolversion=4.4
 
 [INFO]
-0=v0.3
-1=+ sing-box-1.13.2
-2=+ Client: Improved configuration
-3=+ Server: added QUIC parameters
-4=+ Reconnect after suspend/hibernate
-5=+ Self-contained RPM & DEB packages
-6=
-7=v0.2
-8=+ sing-box-1.13.0
-9=+ Self-contained RPM & DEB packages
-10=
-11=v0.1
-12=+ Initial Release
-13=+ sing-box-1.12.22
+0=v0.4
+1=+ sing-box-1.13.5
+2=+ Improved service startup control
+3=+ Self-contained RPM & DEB packages
+4=
+5=v0.3
+6=+ sing-box-1.13.2
+7=+ Client: Improved configuration
+8=+ Server: added QUIC parameters
+9=+ Reconnect after suspend/hibernate
+10=+ Self-contained RPM & DEB packages
+11=
+12=v0.2
+13=+ sing-box-1.13.0
 14=+ Self-contained RPM & DEB packages
+15=
+16=v0.1
+17=+ Initial Release
+18=+ sing-box-1.12.22
+19=+ Self-contained RPM & DEB packages

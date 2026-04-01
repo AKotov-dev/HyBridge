@@ -51,15 +51,13 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="271"/>
-        <CursorPos X="17" Y="291"/>
+        <CursorPos X="13"/>
         <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="portscan_trd.pas"/>
-        <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="20"/>
         <UsageCount Value="32"/>
@@ -72,8 +70,16 @@
         <CursorPos X="18"/>
         <UsageCount Value="31"/>
       </Unit>
+      <Unit>
+        <Filename Value="service_state_trd.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="27"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="4">
+    <JumpHistory HistoryIndex="9">
       <Position>
         <Filename Value="unit1.pas"/>
         <Caret Column="13"/>
@@ -92,7 +98,27 @@
       </Position>
       <Position>
         <Filename Value="unit1.pas"/>
-        <Caret Column="14"/>
+        <Caret Column="13"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="585" Column="3" TopLine="581"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="70" Column="20" TopLine="64"/>
+      </Position>
+      <Position>
+        <Filename Value="service_state_trd.pas"/>
+        <Caret Line="74" Column="21" TopLine="56"/>
+      </Position>
+      <Position>
+        <Filename Value="service_state_trd.pas"/>
+        <Caret Line="80" Column="29" TopLine="56"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="70" Column="21" TopLine="54"/>
       </Position>
     </JumpHistory>
     <RunParams>

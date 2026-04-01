@@ -12,14 +12,13 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms,
   Unit1,
-  portscan_trd,
-  JSONHelper { you can add units after this };
+  JSONHelper, service_state_trd { you can add units after this };
 
   {$R *.res}
 
 begin
   RequireDerivedFormResource := True;
-  Application.Title:='HyBridge v0.3';
+  Application.Title:='HyBridge v0.4';
   Application.Scaled:=True;
   {$PUSH}
   {$WARN 5044 OFF}
