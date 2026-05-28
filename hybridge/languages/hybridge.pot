@@ -75,6 +75,10 @@ msgstr ""
 msgid "https://www.apple.com"
 msgstr ""
 
+#: tmainform.radiogroup1.caption
+msgid "Obfuscator"
+msgstr ""
+
 #: tmainform.speedauto.caption
 msgctxt "tmainform.speedauto.caption"
 msgid "Speed: UP"

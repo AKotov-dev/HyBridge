@@ -1,11 +1,11 @@
 object MainForm: TMainForm
   Left = 299
-  Height = 533
+  Height = 524
   Top = 125
   Width = 624
   ActiveControl = EditServerIP
   Caption = 'HyBridge'
-  ClientHeight = 533
+  ClientHeight = 524
   ClientWidth = 624
   SessionProperties = 'Left;SaveDialog1.InitialDir;Top;Width;Height'
   LCLVersion = '4.4.0.0'
@@ -104,7 +104,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = StaticText1
     Left = 8
     Height = 100
-    Top = 413
+    Top = 404
     Width = 608
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Left = 8
@@ -123,7 +123,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Side = asrBottom
     Left = 0
     Height = 20
-    Top = 513
+    Top = 504
     Width = 624
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2026   https://github.com/AKotov-dev/HyBridge'
@@ -140,7 +140,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo1
     Left = 399
     Height = 40
-    Top = 371
+    Top = 362
     Width = 217
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 2
@@ -153,7 +153,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo1
     Left = 8
     Height = 17
-    Top = 394
+    Top = 385
     Width = 276
     Anchors = [akLeft, akBottom]
     BorderSpacing.Bottom = 2
@@ -168,7 +168,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = EditLocalHTTP
     AnchorSideBottom.Side = asrBottom
     Left = 399
-    Height = 239
+    Height = 231
     Top = 50
     Width = 217
     Anchors = [akTop, akLeft, akRight, akBottom]
@@ -212,7 +212,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     Left = 8
     Height = 17
-    Top = 225
+    Top = 217
     Width = 119
     BorderSpacing.Left = 8
     Caption = '---Client: Bypass'
@@ -228,7 +228,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrBottom
     Left = 132
     Height = 37
-    Top = 215
+    Top = 207
     Width = 95
     BorderSpacing.Left = 5
     BorderSpacing.Top = 15
@@ -260,7 +260,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Side = asrBottom
     Left = 24
     Height = 40
-    Top = 346
+    Top = 338
     Width = 111
     BorderSpacing.Left = 5
     BorderSpacing.Top = 10
@@ -275,7 +275,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Side = asrBottom
     Left = 140
     Height = 40
-    Top = 346
+    Top = 338
     Width = 111
     Anchors = [akTop, akLeft, akBottom]
     BorderSpacing.Left = 5
@@ -290,7 +290,7 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     Left = 132
     Height = 37
-    Top = 257
+    Top = 249
     Width = 95
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
@@ -304,7 +304,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     Left = 8
     Height = 12
-    Top = 360
+    Top = 352
     Width = 11
     BorderSpacing.Left = 8
     Brush.Color = clYellow
@@ -317,7 +317,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     Left = 8
     Height = 17
-    Top = 267
+    Top = 259
     Width = 80
     BorderSpacing.Left = 8
     Caption = 'Port: SOCKS5'
@@ -328,7 +328,7 @@ object MainForm: TMainForm
     AnchorSideRight.Control = EditLocalHTTP
     Left = 261
     Height = 17
-    Top = 267
+    Top = 259
     Width = 34
     Anchors = [akTop, akRight]
     BorderSpacing.Right = 5
@@ -341,7 +341,7 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     Left = 300
     Height = 37
-    Top = 257
+    Top = 249
     Width = 95
     Anchors = [akTop, akRight]
     TabOrder = 7
@@ -355,7 +355,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     Left = 232
     Height = 17
-    Top = 225
+    Top = 217
     Width = 66
     BorderSpacing.Left = 5
     Caption = '-----------'
@@ -509,7 +509,7 @@ object MainForm: TMainForm
     AnchorSideRight.Control = SpeedDownEdit
     Left = 253
     Height = 17
-    Top = 309
+    Top = 301
     Width = 42
     Anchors = [akTop, akRight]
     BorderSpacing.Right = 5
@@ -524,7 +524,7 @@ object MainForm: TMainForm
     Left = 132
     Height = 37
     Hint = 'Mbps'
-    Top = 299
+    Top = 291
     Width = 95
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
@@ -543,7 +543,7 @@ object MainForm: TMainForm
     Left = 300
     Height = 37
     Hint = 'Mbps'
-    Top = 299
+    Top = 291
     Width = 95
     Anchors = [akTop, akLeft, akRight]
     Enabled = False
@@ -559,7 +559,7 @@ object MainForm: TMainForm
     Left = 8
     Height = 32
     Hint = 'Manual/Auto'
-    Top = 301
+    Top = 293
     Width = 94
     BorderSpacing.Left = 8
     Caption = 'Speed: UP'
@@ -575,7 +575,7 @@ object MainForm: TMainForm
     AnchorSideRight.Control = EditServerIP
     AnchorSideRight.Side = asrBottom
     Left = 8
-    Height = 65
+    Height = 57
     Top = 135
     Width = 387
     Anchors = [akTop, akLeft, akRight]
@@ -590,7 +590,7 @@ object MainForm: TMainForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 2
-    ClientHeight = 47
+    ClientHeight = 39
     ClientWidth = 385
     Columns = 2
     ItemIndex = 0
@@ -602,14 +602,14 @@ object MainForm: TMainForm
   end
   object IniPropStorage1: TIniPropStorage
     StoredValues = <>
-    Left = 64
-    Top = 432
+    Left = 73
+    Top = 476
   end
   object SaveDialog1: TSaveDialog
     FileName = 'config.tar.gz'
     Filter = 'Archive [.tar.gz]|*.tar.gz'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
-    Left = 233
-    Top = 432
+    Left = 242
+    Top = 476
   end
 end

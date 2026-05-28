@@ -18,7 +18,7 @@ uses
 
 begin
   RequireDerivedFormResource := True;
-  Application.Title:='HyBridge v0.4';
+  Application.Title:='HyBridge v0.4.1';
   Application.Scaled:=True;
   {$PUSH}
   {$WARN 5044 OFF}
