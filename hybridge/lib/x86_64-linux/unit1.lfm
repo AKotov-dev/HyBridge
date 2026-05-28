@@ -1,11 +1,11 @@
 object MainForm: TMainForm
   Left = 299
-  Height = 533
+  Height = 531
   Top = 125
   Width = 624
   ActiveControl = EditServerIP
   Caption = 'HyBridge'
-  ClientHeight = 533
+  ClientHeight = 531
   ClientWidth = 624
   SessionProperties = 'Left;SaveDialog1.InitialDir;Top;Width;Height'
   LCLVersion = '4.4.0.0'
@@ -81,7 +81,7 @@ object MainForm: TMainForm
     Caption = 'Server Mask'
   end
   object CreateBtn: TBitBtn
-    AnchorSideTop.Control = Owner
+    AnchorSideTop.Control = EditServerIP
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = EditServerIP
@@ -91,7 +91,6 @@ object MainForm: TMainForm
     Top = 8
     Width = 217
     Anchors = [akTop, akRight, akBottom]
-    BorderSpacing.Top = 8
     BorderSpacing.Right = 8
     Caption = 'Create Client and Server'
     TabOrder = 1
@@ -104,7 +103,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = StaticText1
     Left = 8
     Height = 100
-    Top = 413
+    Top = 411
     Width = 608
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Left = 8
@@ -123,7 +122,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Side = asrBottom
     Left = 0
     Height = 20
-    Top = 513
+    Top = 511
     Width = 624
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2026   https://github.com/AKotov-dev/HyBridge'
@@ -140,7 +139,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo1
     Left = 399
     Height = 40
-    Top = 371
+    Top = 369
     Width = 217
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 2
@@ -153,7 +152,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo1
     Left = 8
     Height = 17
-    Top = 394
+    Top = 392
     Width = 276
     Anchors = [akLeft, akBottom]
     BorderSpacing.Bottom = 2
@@ -161,20 +160,18 @@ object MainForm: TMainForm
   end
   object BarcodeQR1: TBarcodeQR
     AnchorSideLeft.Control = CreateBtn
-    AnchorSideTop.Control = CreateBtn
-    AnchorSideTop.Side = asrBottom
+    AnchorSideTop.Control = EditUDPPort
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
-    AnchorSideBottom.Control = EditLocalHTTP
+    AnchorSideBottom.Control = SpeedDownEdit
     AnchorSideBottom.Side = asrBottom
     Left = 399
-    Height = 239
-    Top = 50
+    Height = 282
+    Top = 54
     Width = 217
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 5
     BorderSpacing.Right = 8
-    BorderSpacing.Bottom = 5
     ParentColor = False
     Text = 'HyBridge'
   end
