@@ -349,8 +349,10 @@ begin
         Conf.Add('    "obfs": {');
         Conf.Add('      "type": "gecko",');
         Conf.Add('      "password": "' + OBFS_PASS + '",');
-        Conf.Add('      "min_packet_size": 512,');  //Default = 512
-        Conf.Add('      "max_packet_size": 1200');  //Default = 1200
+        //min_packet_size, Default = 512, Должен быть >= 512
+        Conf.Add('      "min_packet_size": 512,');
+        //max_packet_size, Default = 1200, Должен быть >= 512 и <= 2048
+        Conf.Add('      "max_packet_size": 1200');
         Conf.Add('    }');
       end
     end;
@@ -559,7 +561,8 @@ begin
         Conf.Add('  type: gecko');
         Conf.Add('  gecko:');
         Conf.Add('    password: ' + OBFS_PASS);
-        // Conf.Add('    minPacketSize: 512'); //Меняется только на клиенте или дублируется?
+        // Управляется с клиента
+        // Conf.Add('    minPacketSize: 512');
         // Conf.Add('    maxPacketSize: 1200');
       end;
     end;

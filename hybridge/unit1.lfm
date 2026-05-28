@@ -353,9 +353,13 @@ object MainForm: TMainForm
     Left = 232
     Height = 17
     Top = 225
-    Width = 66
+    Width = 55
     BorderSpacing.Left = 5
     Caption = '-----------'
+    Font.Height = -13
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Image1: TImage
     Left = 536
