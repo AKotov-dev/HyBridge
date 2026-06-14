@@ -2,7 +2,7 @@
 name=hybridge
 
 [VERSION]
-version=0.4.1
+version=0.4.2
 
 [RELEASE]
 release=0.mrx10
@@ -74,29 +74,34 @@ devtool=Lazarus
 toolversion=4.4
 
 [INFO]
-0=v0.4.1
-1=+ sing-box-1.14.0-alpha.26
-2=+ Obfuscation of Hysteria Gecko (experimental)
-3=
-4=**Note:** You need to update your Hysteria2 server to the latest version. As a reminder, if you modify the Server configuration, you must recreate both the Client and Server configurations. If only the client settings are changed, recreating both configurations is not required.
-5=
-6=v0.4
-7=+ sing-box-1.13.5
-8=+ Improved service startup control
-9=+ Self-contained RPM & DEB packages
+0=v0.4.2
+1=+ sing-box-1.14.0-alpha.31
+2=+ Extended domain bypass .ru + .рф
+3=+ Self-contained RPM & DEB packages
+4=
+5=v0.4.1
+6=+ sing-box-1.14.0-alpha.26
+7=+ Obfuscation of Hysteria Gecko (experimental)
+8=
+9=**Note:** You need to update your Hysteria2 server to the latest version. As a reminder, if you modify the Server configuration, you must recreate both the Client and Server configurations. If only the client settings are changed, recreating both configurations is not required.
 10=
-11=v0.3
-12=+ sing-box-1.13.2
-13=+ Client: Improved configuration
-14=+ Server: added QUIC parameters
-15=+ Reconnect after suspend/hibernate
-16=+ Self-contained RPM & DEB packages
-17=
-18=v0.2
-19=+ sing-box-1.13.0
-20=+ Self-contained RPM & DEB packages
-21=
-22=v0.1
-23=+ Initial Release
-24=+ sing-box-1.12.22
+11=v0.4
+12=+ sing-box-1.13.5
+13=+ Improved service startup control
+14=+ Self-contained RPM & DEB packages
+15=
+16=v0.3
+17=+ sing-box-1.13.2
+18=+ Client: Improved configuration
+19=+ Server: added QUIC parameters
+20=+ Reconnect after suspend/hibernate
+21=+ Self-contained RPM & DEB packages
+22=
+23=v0.2
+24=+ sing-box-1.13.0
 25=+ Self-contained RPM & DEB packages
+26=
+27=v0.1
+28=+ Initial Release
+29=+ sing-box-1.12.22
+30=+ Self-contained RPM & DEB packages
