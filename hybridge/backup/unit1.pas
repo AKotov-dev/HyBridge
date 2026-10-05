@@ -292,7 +292,13 @@ begin
     Conf.Add('');
     Conf.Add('  "rules": [');
     Conf.Add('    {');
-    Conf.Add('      "domain_suffix": ["' + BypassBox.Text + '"],');
+
+    //Поддержка зоны .рф
+    if BypassBox.Text <> '.ru' then
+      Conf.Add('      "domain_suffix": ["' + BypassBox.Text + '"],')
+    else
+      Conf.Add('      "domain_suffix": [".ru", ".xn--p1ai"],');
+
     Conf.Add('      "server": "local"');
     Conf.Add('    }');
     Conf.Add('  ]');

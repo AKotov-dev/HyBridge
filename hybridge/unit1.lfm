@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 299
+  Left = 323
   Height = 531
-  Top = 125
+  Top = 127
   Width = 624
   ActiveControl = EditServerIP
   Caption = 'HyBridge'
