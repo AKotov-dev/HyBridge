@@ -29,7 +29,7 @@ The system proxy is configured automatically. Supported DEs: Budgie, GNOME, MATE
 + For Android smartphones, use the [NekoBox](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases) client. 
 
 <details>
-  <summary>DNS Transports in HyBridge...</summary>
+  <summary>DNS Transports...</summary>
 
 URL: https://sing-box.sagernet.org/configuration/dns/server/
 ```
