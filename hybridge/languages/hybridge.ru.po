@@ -90,7 +90,7 @@ msgid "HTTP"
 msgstr "HTTP"
 
 #: tmainform.maskbox.text
-msgid "https://www.apple.com"
+msgid "https://www.wildberries.ru"
 msgstr ""
 
 #: tmainform.radiogroup1.caption
@@ -127,3 +127,4 @@ msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2026   https://git
 #: tmainform.stopbtn.caption
 msgid "Stop"
 msgstr "Стоп"
+

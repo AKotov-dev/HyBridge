@@ -190,6 +190,7 @@ object MainForm: TMainForm
     BorderSpacing.Left = 5
     BorderSpacing.Top = 4
     ItemHeight = 0
+    ItemIndex = 5
     Items.Strings = (
       'https://www.apple.com'
       'https://www.avito.ru'
@@ -201,7 +202,7 @@ object MainForm: TMainForm
     )
     Sorted = True
     TabOrder = 3
-    Text = 'https://www.apple.com'
+    Text = 'https://www.ozon.ru'
   end
   object Label6: TLabel
     AnchorSideLeft.Control = Owner
@@ -614,7 +615,6 @@ object MainForm: TMainForm
       'udp'
       'h3'
       'tls'
-      'quic'
       'https'
     )
     ParentShowHint = False

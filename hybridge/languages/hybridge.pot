@@ -80,7 +80,7 @@ msgid "HTTP"
 msgstr ""
 
 #: tmainform.maskbox.text
-msgid "https://www.apple.com"
+msgid "https://www.wildberries.ru"
 msgstr ""
 
 #: tmainform.radiogroup1.caption
