@@ -515,7 +515,8 @@ begin
 
   if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
     (Trim(MaskBox.Text) = '') or (Trim(ByPassBox.Text) = '') or
-    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') then Exit;
+    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') or
+    (Trim(DNSProtoBox.Text) = '') then Exit;
 
   if SpeedAuto.Checked and ((Trim(SpeedUPEdit.Text) = '') or
     (Trim(SpeedDownEdit.Text) = '')) then Exit;
@@ -718,7 +719,8 @@ var
 begin
   if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
     (Trim(MaskBox.Text) = '') or (Trim(ByPassBox.Text) = '') or
-    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') then Exit;
+    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') or
+    (Trim(DNSProtoBox.Text) = '') then Exit;
 
   if SpeedAuto.Checked and ((Trim(SpeedUPEdit.Text) = '') or
     (Trim(SpeedDownEdit.Text) = '')) then Exit;

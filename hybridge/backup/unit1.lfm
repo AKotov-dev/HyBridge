@@ -190,7 +190,7 @@ object MainForm: TMainForm
     BorderSpacing.Left = 5
     BorderSpacing.Top = 4
     ItemHeight = 0
-    ItemIndex = 5
+    ItemIndex = 6
     Items.Strings = (
       'https://www.apple.com'
       'https://www.avito.ru'
@@ -202,7 +202,7 @@ object MainForm: TMainForm
     )
     Sorted = True
     TabOrder = 3
-    Text = 'https://www.ozon.ru'
+    Text = 'https://www.wildberries.ru'
   end
   object Label6: TLabel
     AnchorSideLeft.Control = Owner
