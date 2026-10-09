@@ -4,6 +4,7 @@ object MainForm: TMainForm
   Top = 126
   Width = 631
   ActiveControl = EditServerIP
+  Anchors = [akTop]
   Caption = 'HyBridge'
   ClientHeight = 531
   ClientWidth = 631
@@ -112,7 +113,7 @@ object MainForm: TMainForm
     Font.Name = 'Monospace'
     ParentFont = False
     ReadOnly = True
-    TabOrder = 13
+    TabOrder = 12
   end
   object StaticText1: TStaticText
     AnchorSideLeft.Control = Owner
@@ -130,7 +131,7 @@ object MainForm: TMainForm
     Font.Height = -11
     Font.Name = 'Sans'
     ParentFont = False
-    TabOrder = 14
+    TabOrder = 13
   end
   object CopyBtn: TBitBtn
     AnchorSideLeft.Control = CreateBtn
@@ -144,7 +145,7 @@ object MainForm: TMainForm
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 2
     Caption = 'Copy URI to Clipboard'
-    TabOrder = 12
+    TabOrder = 11
     OnClick = CopyBtnClick
   end
   object Label5: TLabel
@@ -280,7 +281,7 @@ object MainForm: TMainForm
     Caption = 'Stop'
     OnClick = StopBtnClick
   end
-  object EditLocalSocks: TEdit
+  object EditLocalMixed: TEdit
     AnchorSideLeft.Control = BypassBox
     AnchorSideTop.Control = BypassBox
     AnchorSideTop.Side = asrBottom
@@ -292,8 +293,8 @@ object MainForm: TMainForm
     Width = 95
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
-    TabOrder = 7
-    Text = '1080'
+    TabOrder = 6
+    Text = '11080'
     OnKeyPress = EditServerIPKeyPress
   end
   object Shape1: TShape
@@ -311,45 +312,19 @@ object MainForm: TMainForm
   end
   object Label7: TLabel
     AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = EditLocalSocks
+    AnchorSideTop.Control = EditLocalMixed
     AnchorSideTop.Side = asrCenter
     Left = 8
     Height = 17
     Top = 267
-    Width = 80
+    Width = 73
     BorderSpacing.Left = 8
-    Caption = 'Port: SOCKS5'
-  end
-  object Label8: TLabel
-    AnchorSideTop.Control = EditLocalHTTP
-    AnchorSideTop.Side = asrCenter
-    AnchorSideRight.Control = EditLocalHTTP
-    Left = 268
-    Height = 17
-    Top = 267
-    Width = 34
-    Anchors = [akTop, akRight]
-    BorderSpacing.Right = 5
-    Caption = 'HTTP'
-  end
-  object EditLocalHTTP: TEdit
-    AnchorSideTop.Control = EditLocalSocks
-    AnchorSideTop.Side = asrCenter
-    AnchorSideRight.Control = EditServerIP
-    AnchorSideRight.Side = asrBottom
-    Left = 307
-    Height = 37
-    Top = 257
-    Width = 95
-    Anchors = [akTop, akRight]
-    TabOrder = 8
-    Text = '8889'
-    OnKeyPress = EditServerIPKeyPress
+    Caption = 'Port (mixed)'
   end
   object Image1: TImage
-    Left = 536
+    Left = 329
     Height = 64
-    Top = 304
+    Top = 342
     Width = 64
     AutoSize = True
     Picture.Data = {
@@ -503,7 +478,7 @@ object MainForm: TMainForm
   end
   object SpeedUPEdit: TEdit
     AnchorSideLeft.Control = BypassBox
-    AnchorSideTop.Control = EditLocalSocks
+    AnchorSideTop.Control = EditLocalMixed
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = BypassBox
     AnchorSideRight.Side = asrBottom
@@ -517,11 +492,10 @@ object MainForm: TMainForm
     Enabled = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 10
+    TabOrder = 9
     OnKeyPress = EditServerIPKeyPress
   end
   object SpeedDownEdit: TEdit
-    AnchorSideLeft.Control = EditLocalHTTP
     AnchorSideTop.Control = SpeedUPEdit
     AnchorSideTop.Side = asrCenter
     AnchorSideRight.Control = EditServerIP
@@ -531,11 +505,11 @@ object MainForm: TMainForm
     Hint = 'Mbps'
     Top = 299
     Width = 95
-    Anchors = [akTop, akLeft, akRight]
+    Anchors = [akTop, akRight]
     Enabled = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 11
+    TabOrder = 10
     OnKeyPress = EditServerIPKeyPress
   end
   object SpeedAuto: TCheckBox
@@ -551,7 +525,7 @@ object MainForm: TMainForm
     Caption = 'Speed: UP'
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 9
+    TabOrder = 8
     OnChange = SpeedAutoChange
   end
   object RadioGroup1: TRadioGroup
@@ -587,26 +561,26 @@ object MainForm: TMainForm
     TabOrder = 4
   end
   object Label3: TLabel
-    AnchorSideTop.Control = BypassBox
+    AnchorSideTop.Control = EditLocalMixed
     AnchorSideTop.Side = asrCenter
     AnchorSideRight.Control = DNSProtoBox
     Left = 276
     Height = 17
-    Top = 225
+    Top = 267
     Width = 26
     Anchors = [akTop, akRight]
     BorderSpacing.Right = 5
     Caption = 'DNS'
   end
   object DNSProtoBox: TComboBox
-    AnchorSideTop.Control = BypassBox
+    AnchorSideTop.Control = EditLocalMixed
     AnchorSideTop.Side = asrCenter
     AnchorSideRight.Control = EditServerIP
     AnchorSideRight.Side = asrBottom
     Left = 307
     Height = 37
     Hint = 'Protocol selection'
-    Top = 215
+    Top = 257
     Width = 95
     Anchors = [akTop, akRight]
     ItemHeight = 0
@@ -619,8 +593,22 @@ object MainForm: TMainForm
     )
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 6
+    TabOrder = 7
     Text = 'tcp'
+  end
+  object Label8: TLabel
+    AnchorSideLeft.Control = BypassBox
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = BypassBox
+    AnchorSideTop.Side = asrCenter
+    Left = 232
+    Height = 17
+    Top = 225
+    Width = 35
+    BorderSpacing.Left = 5
+    Caption = '-------'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object IniPropStorage1: TIniPropStorage
     StoredValues = <>

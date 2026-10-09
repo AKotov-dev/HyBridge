@@ -17,18 +17,17 @@ type
     BypassBox: TComboBox;
     DNSProtoBox: TComboBox;
     Label3: TLabel;
+    Label8: TLabel;
     RadioGroup1: TRadioGroup;
     SpeedAuto: TCheckBox;
     SpeedUPEdit: TEdit;
     SpeedDownEdit: TEdit;
-    EditLocalSocks: TEdit;
-    EditLocalHTTP: TEdit;
+    EditLocalMixed: TEdit;
     Image1: TImage;
     IniPropStorage1: TIniPropStorage;
     Label10: TLabel;
     Label6: TLabel;
     Label7: TLabel;
-    Label8: TLabel;
     MaskBox: TComboBox;
     CreateBtn: TBitBtn;
     CopyBtn: TBitBtn;
@@ -55,7 +54,6 @@ type
     procedure StopBtnClick(Sender: TObject);
     procedure LoadConfiguration;
     procedure CreateClientConfig(AUTH_PASS, OBFS_PASS: string);
-    procedure CreateSWProxy;
 
   private
 
@@ -177,86 +175,6 @@ begin
   end;
 end;
 
-//Create ~/config/hybridge/swproxy.sh
-procedure TMainForm.CreateSWProxy;
-var
-  S: ansistring;
-  A: TStringList;
-begin
-  try
-    A := TStringList.Create;
-    A.Add('#!/bin/bash');
-    A.Add('');
-    A.Add('if [[ "$1" == "set" ]]; then');
-    A.Add('  echo "set proxy..."');
-    A.Add('');
-    A.Add('  # GNOME / GTK-based');
-    A.Add('  if [[ "$XDG_CURRENT_DESKTOP" =~ GNOME|Budgie|Cinnamon|MATE|XFCE|LXDE ]]; then');
-    A.Add('    gsettings set org.gnome.system.proxy mode manual');
-    A.Add('    gsettings set org.gnome.system.proxy.http  host "127.0.0.1"');
-    A.Add('    gsettings set org.gnome.system.proxy.http  port ' + EditLocalHTTP.Text);
-    A.Add('    gsettings set org.gnome.system.proxy.https host "127.0.0.1"');
-    A.Add('    gsettings set org.gnome.system.proxy.https port ' + EditLocalHTTP.Text);
-    A.Add('    gsettings set org.gnome.system.proxy.ftp   host "127.0.0.1"');
-    A.Add('    gsettings set org.gnome.system.proxy.ftp   port ' + EditLocalHTTP.Text);
-    A.Add('    gsettings set org.gnome.system.proxy.socks host "127.0.0.1"');
-    A.Add('    gsettings set org.gnome.system.proxy.socks port ' + EditLocalSocks.Text);
-    A.Add('    gsettings set org.gnome.system.proxy ignore-hosts "[' +
-      '''' + 'localhost' + '''' + ', ' + '''' + '127.0.0.1' + '''' +
-      ', ' + '''' + '::1' + '''' + ']"');
-    A.Add('  fi');
-    A.Add('');
-    A.Add('  # KDE Plasma');
-    A.Add('  if [[ "$XDG_CURRENT_DESKTOP" == KDE ]]; then');
-    A.Add('    if command -v kwriteconfig5 >/dev/null; then');
-    A.Add('      v=5');
-    A.Add('    elif command -v kwriteconfig6 >/dev/null; then');
-    A.Add('      v=6');
-    A.Add('    else');
-    A.Add('      echo "No kwriteconfig found"');
-    A.Add('      exit 1');
-    A.Add('  fi');
-    A.Add('');
-    A.Add('    kwriteconfig$v --file kioslaverc --group "Proxy Settings" --key ProxyType 1');
-    A.Add('    kwriteconfig$v --file kioslaverc --group "Proxy Settings" --key httpProxy  "http://127.0.0.1:' + EditLocalHTTP.Text + '"');
-    A.Add('    kwriteconfig$v --file kioslaverc --group "Proxy Settings" --key httpsProxy "http://127.0.0.1:' + EditLocalHTTP.Text + '"');
-    A.Add('    kwriteconfig$v --file kioslaverc --group "Proxy Settings" --key ftpProxy   "http://127.0.0.1:' + EditLocalHTTP.Text + '"');
-    A.Add('    kwriteconfig$v --file kioslaverc --group "Proxy Settings" --key socksProxy "socks5h://127.0.0.1:' + EditLocalSocks.Text + '"');
-    A.Add('    kwriteconfig$v --file kioslaverc --group "Proxy Settings" --key NoProxy    "['
-      + '''' + 'localhost' + '''' + ', ' + '''' + '127.0.0.1' + '''' +
-      ', ' + '''' + '::1' + '''' + ']"');
-    A.Add('  fi');
-    A.Add('else');
-    A.Add('  echo "unset proxy..."');
-    A.Add('');
-    A.Add('  # GNOME / GTK-based');
-    A.Add('  if [[ "$XDG_CURRENT_DESKTOP" =~ GNOME|Budgie|Cinnamon|MATE|XFCE|LXDE ]]; then');
-    A.Add('    gsettings set org.gnome.system.proxy mode none');
-    A.Add('  fi');
-    A.Add('');
-    A.Add('  # KDE Plasma');
-    A.Add('  if [[ "$XDG_CURRENT_DESKTOP" == KDE ]]; then');
-    A.Add('    if command -v kwriteconfig5 >/dev/null; then');
-    A.Add('      v=5');
-    A.Add('    elif command -v kwriteconfig6 >/dev/null; then');
-    A.Add('      v=6');
-    A.Add('    else');
-    A.Add('      echo "No kwriteconfig found"');
-    A.Add('      exit 1');
-    A.Add('    fi');
-    A.Add('');
-    A.Add('    kwriteconfig$v --file kioslaverc --group "Proxy Settings" --key ProxyType 0');
-    A.Add('  fi');
-    A.Add('fi');
-    A.Add('');
-
-    A.SaveToFile(GetUserDir + '.config/hybridge/swproxy.sh');
-    RunCommand('/bin/bash', ['-c', 'chmod +x ~/.config/hybridge/swproxy.sh'], S);
-  finally
-    A.Free;
-  end;
-end;
-
 //Создание конфига клиента
 // https://v2.hysteria.network/docs/advanced/Full-Client-Config/
 procedure TMainForm.CreateClientConfig(AUTH_PASS, OBFS_PASS: string);
@@ -307,16 +225,10 @@ begin
     Conf.Add('');
     Conf.Add('"inbounds": [');
     Conf.Add('  {');
-    Conf.Add('    "type": "socks",');
-    Conf.Add('    "tag": "socks-in",');
-    Conf.Add('    "listen": "127.0.0.1",');
-    Conf.Add('    "listen_port": ' + EditLocalSocks.Text);
-    Conf.Add('  },');
-    Conf.Add('  {');
-    Conf.Add('    "type": "http",');
-    Conf.Add('    "tag": "http-in",');
-    Conf.Add('    "listen": "127.0.0.1",');
-    Conf.Add('    "listen_port": ' + EditLocalHTTP.Text);
+    Conf.Add('    "type": "mixed",');
+    Conf.Add('    "tag": "mixed-in",');
+    Conf.Add('    "set_system_proxy": true,');
+    Conf.Add('    "listen_port": ' + EditLocalMixed.Text);
     Conf.Add('  }');
     Conf.Add('],');
     Conf.Add('');
@@ -441,10 +353,7 @@ begin
     DNSProtoBox.Text := GetJSONValue(config, 'dns.servers[0].type[0]');
 
     // local_port SOCKS5
-    EditLocalSocks.Text := GetJSONValue(config, 'inbounds[0].listen_port');
-
-    // local_port HTTP
-    EditLocalHTTP.Text := GetJSONValue(config, 'inbounds[1].listen_port');
+    EditLocalMixed.Text := GetJSONValue(config, 'inbounds[0].listen_port');
 
     // SpeedUP
     SpeedUPEdit.Text := GetJSONValue(config, 'outbounds[0].up_mbps');
@@ -515,8 +424,7 @@ begin
 
   if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
     (Trim(MaskBox.Text) = '') or (Trim(ByPassBox.Text) = '') or
-    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') or
-    (Trim(DNSProtoBox.Text) = '') then Exit;
+    (Trim(EditLocalMixed.Text) = '') or (Trim(DNSProtoBox.Text) = '') then Exit;
 
   if SpeedAuto.Checked and ((Trim(SpeedUPEdit.Text) = '') or
     (Trim(SpeedDownEdit.Text) = '')) then Exit;
@@ -719,8 +627,7 @@ var
 begin
   if (Trim(EditServerIP.Text) = '') or (Trim(EditUDPPort.Text) = '') or
     (Trim(MaskBox.Text) = '') or (Trim(ByPassBox.Text) = '') or
-    (Trim(EditLocalSocks.Text) = '') or (Trim(EditLocalHTTP.Text) = '') or
-    (Trim(DNSProtoBox.Text) = '') then Exit;
+    (Trim(EditLocalMixed.Text) = '') or (Trim(DNSProtoBox.Text) = '') then Exit;
 
   if SpeedAuto.Checked and ((Trim(SpeedUPEdit.Text) = '') or
     (Trim(SpeedDownEdit.Text) = '')) then Exit;
@@ -735,10 +642,6 @@ begin
 
   //Пересоздаём конфиг клиента
   CreateClientConfig(AUTH_PASS, OBFS_PASS);
-
-  //Пересоздаём ~/.config/hybridge/swproxy.sh
-  CreateSWProxy;
-  StartProcess('~/.config/hybridge/swproxy.sh set');
 
   StartProcess('systemctl --user restart hybridge.service && systemctl --user enable hybridge.service');
 end;

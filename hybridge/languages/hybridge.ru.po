@@ -41,12 +41,8 @@ msgstr "Выбор протокола"
 msgid "tcp"
 msgstr ""
 
-#: tmainform.editlocalhttp.text
-msgid "8889"
-msgstr ""
-
-#: tmainform.editlocalsocks.text
-msgid "1080"
+#: tmainform.editlocalmixed.text
+msgid "11080"
 msgstr ""
 
 #: tmainform.editudpport.text
@@ -82,12 +78,14 @@ msgid "---Client: Bypass"
 msgstr "---Клиент: Байпас"
 
 #: tmainform.label7.caption
-msgid "Port: SOCKS5"
+#, fuzzy
+#| msgid "Port: SOCKS5"
+msgid "Port (mixed)"
 msgstr "Порт: SOCKS5"
 
 #: tmainform.label8.caption
-msgid "HTTP"
-msgstr "HTTP"
+msgid "-------"
+msgstr ""
 
 #: tmainform.maskbox.text
 msgid "https://www.wildberries.ru"

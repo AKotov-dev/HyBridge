@@ -31,12 +31,8 @@ msgstr ""
 msgid "tcp"
 msgstr ""
 
-#: tmainform.editlocalhttp.text
-msgid "8889"
-msgstr ""
-
-#: tmainform.editlocalsocks.text
-msgid "1080"
+#: tmainform.editlocalmixed.text
+msgid "11080"
 msgstr ""
 
 #: tmainform.editudpport.text
@@ -72,11 +68,11 @@ msgid "---Client: Bypass"
 msgstr ""
 
 #: tmainform.label7.caption
-msgid "Port: SOCKS5"
+msgid "Port (mixed)"
 msgstr ""
 
 #: tmainform.label8.caption
-msgid "HTTP"
+msgid "-------"
 msgstr ""
 
 #: tmainform.maskbox.text
