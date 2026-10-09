@@ -23,8 +23,7 @@ The speed limit settings (UP/DOWN) are useful when configuring mobile devices or
 The system proxy is configured automatically. Supported DEs: Budgie, GNOME, MATE, Cinnamon, KDE. XFCE and LXDE support system proxy mode when [XDE-Proxy-GUI](https://github.com/AKotov-dev/xde-proxy-gui) is installed.  
   
 ### Note
-+ If YouTube videos fail to load or display “Content unavailable. Try again later.”, disable QUIC in your Chromium-based browser. Open `chrome://flags/#enable-quic`, set `Experimental QUIC protocol` to `Disabled`, then restart the browser.  
-+ If the problem continues, temporarily disable your ad blocker (e.g., uBlock, Brave Shields, etc.) and restart the browser again.
++ QUIC traffic may be throttled or restricted by some ISPs in Russia. For this reason, HyBridge enables obfuscation by default. DNS-over-QUIC (DoQ) are not included in the DNS transport list, as they may not work reliably on affected networks.
 + If you modify the `Server` configuration (GUI), you must recreate both the Client and Server configurations. If only the client settings are changed, recreating both configurations is not required.
 + For Android smartphones, use the [NekoBox](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases) client. 
 
