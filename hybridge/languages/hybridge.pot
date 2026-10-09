@@ -48,7 +48,7 @@ msgid "DOWN"
 msgstr ""
 
 #: tmainform.label2.caption
-msgid "Server UDP port"
+msgid "Server port"
 msgstr ""
 
 #: tmainform.label3.caption

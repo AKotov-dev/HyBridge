@@ -65,21 +65,12 @@ end;
 //Отображение статуса
 procedure ServiceState.ShowStatus;
 begin
-  with MainForm do
-  begin
-    if Trim(ResultStr.Text) = 'active' then
-    begin
-      Shape1.Brush.Color := clLime;
-      EditLocalMixed.Enabled := False;
-    end
-    else
-    begin
-      Shape1.Brush.Color := clYellow;
-      EditLocalMixed.Enabled := True;
-    end;
+  if Trim(ResultStr.Text) = 'active' then
+    MainForm.Shape1.Brush.Color := clLime
+  else
+    MainForm.Shape1.Brush.Color := clYellow;
 
-    Shape1.Repaint;
-  end;
+  MainForm.Shape1.Repaint;
 end;
 
 end.

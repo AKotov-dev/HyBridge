@@ -66,19 +66,10 @@ end;
 procedure ServiceState.ShowStatus;
 begin
   with MainForm do
-  begin
     if Trim(ResultStr.Text) = 'active' then
-    begin
       Shape1.Brush.Color := clLime;
-      DNSProtoBox.Enabled := False;
-      EditLocalMixed.Enabled := False;
-    end
     else
-    begin
       Shape1.Brush.Color := clYellow;
-      DNSProtoBox.Enabled := True;
-      EditLocalMixed.Enabled := True;
-    end;
 
     Shape1.Repaint;
   end;

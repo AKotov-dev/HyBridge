@@ -58,8 +58,8 @@ msgid "DOWN"
 msgstr ""
 
 #: tmainform.label2.caption
-msgid "Server UDP port"
-msgstr "UDP порт сервера"
+msgid "Server port"
+msgstr "Порт сервера"
 
 #: tmainform.label3.caption
 msgid "DNS"
@@ -78,10 +78,8 @@ msgid "---Client: Bypass"
 msgstr "---Клиент: Байпас"
 
 #: tmainform.label7.caption
-#, fuzzy
-#| msgid "Port: SOCKS5"
 msgid "Port (mixed)"
-msgstr "Порт: SOCKS5"
+msgstr "Порт (смешанный)"
 
 #: tmainform.label8.caption
 msgid "-------"
@@ -125,4 +123,3 @@ msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2026   https://git
 #: tmainform.stopbtn.caption
 msgid "Stop"
 msgstr "Стоп"
-

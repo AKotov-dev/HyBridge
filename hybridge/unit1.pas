@@ -408,7 +408,6 @@ end;
 //Stop
 procedure TMainForm.StopBtnClick(Sender: TObject);
 begin
-  StartProcess('~/.config/hybridge/swproxy.sh reset');
   StartProcess('systemctl --user stop hybridge.service; systemctl --user disable hybridge.service');
 end;
 
