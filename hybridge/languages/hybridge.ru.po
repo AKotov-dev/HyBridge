@@ -49,6 +49,10 @@ msgstr ""
 msgid "443"
 msgstr ""
 
+#: tmainform.hint
+msgid "Local port"
+msgstr "Локальный порт"
+
 #: tmainform.label1.caption
 msgid "---Server: IP -------"
 msgstr "---Сервер: IP -------"
@@ -96,7 +100,7 @@ msgstr "Обфускатор"
 #: tmainform.speedauto.caption
 msgctxt "tmainform.speedauto.caption"
 msgid "Speed: UP"
-msgstr ""
+msgstr "Скорость: UP"
 
 #: tmainform.speedauto.hint
 msgid "Manual/Auto"

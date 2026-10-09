@@ -1,6 +1,7 @@
 object MainForm: TMainForm
   Left = 324
   Height = 531
+  Hint = 'Local port'
   Top = 126
   Width = 631
   ActiveControl = EditServerIP
@@ -66,9 +67,9 @@ object MainForm: TMainForm
     Left = 8
     Height = 17
     Top = 59
-    Width = 95
+    Width = 66
     BorderSpacing.Left = 8
-    Caption = 'Server UDP port'
+    Caption = 'Server port'
   end
   object Label4: TLabel
     AnchorSideLeft.Control = Owner

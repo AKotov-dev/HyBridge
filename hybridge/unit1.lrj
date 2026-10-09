@@ -1,4 +1,5 @@
 {"version":1,"strings":[
+{"hash":132276996,"name":"tmainform.hint","sourcebytes":[76,111,99,97,108,32,112,111,114,116],"value":"Local port"},
 {"hash":228130341,"name":"tmainform.caption","sourcebytes":[72,121,66,114,105,100,103,101],"value":"HyBridge"},
 {"hash":14195,"name":"tmainform.editudpport.text","sourcebytes":[52,52,51],"value":"443"},
 {"hash":145207581,"name":"tmainform.label1.caption","sourcebytes":[45,45,45,83,101,114,118,101,114,58,32,73,80,32,45,45,45,45,45,45,45],"value":"---Server: IP -------"},

@@ -39,6 +39,10 @@ msgstr ""
 msgid "443"
 msgstr ""
 
+#: tmainform.hint
+msgid "Local port"
+msgstr ""
+
 #: tmainform.label1.caption
 msgid "---Server: IP -------"
 msgstr ""

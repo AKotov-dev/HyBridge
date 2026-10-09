@@ -1,6 +1,7 @@
 object MainForm: TMainForm
   Left = 324
   Height = 531
+  Hint = 'Local port'
   Top = 126
   Width = 631
   ActiveControl = EditServerIP
@@ -293,6 +294,8 @@ object MainForm: TMainForm
     Width = 95
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 6
     Text = '11080'
     OnKeyPress = EditServerIPKeyPress
