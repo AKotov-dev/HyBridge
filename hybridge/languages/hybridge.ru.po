@@ -33,6 +33,14 @@ msgstr "Копировать URI в буфер"
 msgid "Create Client and Server"
 msgstr "Создать Клиент и Сервер"
 
+#: tmainform.dnsprotobox.hint
+msgid "Protocol selection"
+msgstr "Выбор протокола"
+
+#: tmainform.dnsprotobox.text
+msgid "tcp"
+msgstr ""
+
 #: tmainform.editlocalhttp.text
 msgid "8889"
 msgstr ""
@@ -57,6 +65,10 @@ msgstr ""
 msgid "Server UDP port"
 msgstr "UDP порт сервера"
 
+#: tmainform.label3.caption
+msgid "DNS"
+msgstr ""
+
 #: tmainform.label4.caption
 msgid "Server Mask"
 msgstr "Маска сервера"
@@ -76,10 +88,6 @@ msgstr "Порт: SOCKS5"
 #: tmainform.label8.caption
 msgid "HTTP"
 msgstr "HTTP"
-
-#: tmainform.label9.caption
-msgid "-----------"
-msgstr ""
 
 #: tmainform.maskbox.text
 msgid "https://www.apple.com"

@@ -1,12 +1,12 @@
 object MainForm: TMainForm
-  Left = 323
+  Left = 324
   Height = 531
-  Top = 127
-  Width = 624
+  Top = 126
+  Width = 631
   ActiveControl = EditServerIP
   Caption = 'HyBridge'
   ClientHeight = 531
-  ClientWidth = 624
+  ClientWidth = 631
   SessionProperties = 'Left;SaveDialog1.InitialDir;Top;Width;Height'
   LCLVersion = '4.4.0.0'
   OnCreate = FormCreate
@@ -20,7 +20,7 @@ object MainForm: TMainForm
     Left = 140
     Height = 37
     Top = 8
-    Width = 255
+    Width = 262
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 5
     BorderSpacing.Top = 8
@@ -36,7 +36,7 @@ object MainForm: TMainForm
     Left = 140
     Height = 37
     Top = 49
-    Width = 255
+    Width = 262
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 4
     TabOrder = 2
@@ -86,7 +86,7 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = EditServerIP
     AnchorSideBottom.Side = asrBottom
-    Left = 399
+    Left = 406
     Height = 37
     Top = 8
     Width = 217
@@ -104,7 +104,7 @@ object MainForm: TMainForm
     Left = 8
     Height = 100
     Top = 411
-    Width = 608
+    Width = 615
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Left = 8
     BorderSpacing.Right = 8
@@ -112,7 +112,7 @@ object MainForm: TMainForm
     Font.Name = 'Monospace'
     ParentFont = False
     ReadOnly = True
-    TabOrder = 12
+    TabOrder = 13
   end
   object StaticText1: TStaticText
     AnchorSideLeft.Control = Owner
@@ -123,28 +123,28 @@ object MainForm: TMainForm
     Left = 0
     Height = 20
     Top = 511
-    Width = 624
+    Width = 631
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2026   https://github.com/AKotov-dev/HyBridge'
     Font.Color = clGray
     Font.Height = -11
     Font.Name = 'Sans'
     ParentFont = False
-    TabOrder = 13
+    TabOrder = 14
   end
   object CopyBtn: TBitBtn
     AnchorSideLeft.Control = CreateBtn
     AnchorSideRight.Control = Memo1
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Memo1
-    Left = 399
+    Left = 406
     Height = 40
     Top = 369
     Width = 217
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 2
     Caption = 'Copy URI to Clipboard'
-    TabOrder = 11
+    TabOrder = 12
     OnClick = CopyBtnClick
   end
   object Label5: TLabel
@@ -165,7 +165,7 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = SpeedDownEdit
     AnchorSideBottom.Side = asrBottom
-    Left = 399
+    Left = 406
     Height = 282
     Top = 54
     Width = 217
@@ -185,7 +185,7 @@ object MainForm: TMainForm
     Left = 84
     Height = 37
     Top = 90
-    Width = 311
+    Width = 318
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 5
     BorderSpacing.Top = 4
@@ -291,7 +291,7 @@ object MainForm: TMainForm
     Width = 95
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
-    TabOrder = 6
+    TabOrder = 7
     Text = '1080'
     OnKeyPress = EditServerIPKeyPress
   end
@@ -323,7 +323,7 @@ object MainForm: TMainForm
     AnchorSideTop.Control = EditLocalHTTP
     AnchorSideTop.Side = asrCenter
     AnchorSideRight.Control = EditLocalHTTP
-    Left = 261
+    Left = 268
     Height = 17
     Top = 267
     Width = 34
@@ -336,30 +336,14 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     AnchorSideRight.Control = EditServerIP
     AnchorSideRight.Side = asrBottom
-    Left = 300
+    Left = 307
     Height = 37
     Top = 257
     Width = 95
     Anchors = [akTop, akRight]
-    TabOrder = 7
+    TabOrder = 8
     Text = '8889'
     OnKeyPress = EditServerIPKeyPress
-  end
-  object Label9: TLabel
-    AnchorSideLeft.Control = BypassBox
-    AnchorSideLeft.Side = asrBottom
-    AnchorSideTop.Control = BypassBox
-    AnchorSideTop.Side = asrCenter
-    Left = 232
-    Height = 17
-    Top = 225
-    Width = 55
-    BorderSpacing.Left = 5
-    Caption = '-----------'
-    Font.Height = -13
-    Font.Name = 'Sans'
-    Font.Style = [fsBold]
-    ParentFont = False
   end
   object Image1: TImage
     Left = 536
@@ -508,7 +492,7 @@ object MainForm: TMainForm
     AnchorSideTop.Control = SpeedDownEdit
     AnchorSideTop.Side = asrCenter
     AnchorSideRight.Control = SpeedDownEdit
-    Left = 253
+    Left = 260
     Height = 17
     Top = 309
     Width = 42
@@ -532,7 +516,7 @@ object MainForm: TMainForm
     Enabled = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 9
+    TabOrder = 10
     OnKeyPress = EditServerIPKeyPress
   end
   object SpeedDownEdit: TEdit
@@ -541,7 +525,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrCenter
     AnchorSideRight.Control = EditServerIP
     AnchorSideRight.Side = asrBottom
-    Left = 300
+    Left = 307
     Height = 37
     Hint = 'Mbps'
     Top = 299
@@ -550,7 +534,7 @@ object MainForm: TMainForm
     Enabled = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 10
+    TabOrder = 11
     OnKeyPress = EditServerIPKeyPress
   end
   object SpeedAuto: TCheckBox
@@ -566,7 +550,7 @@ object MainForm: TMainForm
     Caption = 'Speed: UP'
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 8
+    TabOrder = 9
     OnChange = SpeedAutoChange
   end
   object RadioGroup1: TRadioGroup
@@ -578,7 +562,7 @@ object MainForm: TMainForm
     Left = 8
     Height = 65
     Top = 135
-    Width = 387
+    Width = 394
     Anchors = [akTop, akLeft, akRight]
     AutoFill = True
     BorderSpacing.Left = 8
@@ -592,7 +576,7 @@ object MainForm: TMainForm
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 2
     ClientHeight = 47
-    ClientWidth = 385
+    ClientWidth = 392
     Columns = 2
     ItemIndex = 0
     Items.Strings = (
@@ -600,6 +584,42 @@ object MainForm: TMainForm
       'Gecko'
     )
     TabOrder = 4
+  end
+  object Label3: TLabel
+    AnchorSideTop.Control = BypassBox
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = DNSProtoBox
+    Left = 276
+    Height = 17
+    Top = 225
+    Width = 26
+    Anchors = [akTop, akRight]
+    BorderSpacing.Right = 5
+    Caption = 'DNS'
+  end
+  object DNSProtoBox: TComboBox
+    AnchorSideTop.Control = BypassBox
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = EditServerIP
+    AnchorSideRight.Side = asrBottom
+    Left = 307
+    Height = 37
+    Hint = 'Protocol selection'
+    Top = 215
+    Width = 95
+    Anchors = [akTop, akRight]
+    ItemHeight = 0
+    Items.Strings = (
+      'tcp'
+      'udp'
+      'h3'
+      'tls'
+      'https'
+    )
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 6
+    Text = 'tcp'
   end
   object IniPropStorage1: TIniPropStorage
     StoredValues = <>

@@ -1,0 +1,14 @@
+type: udp
+    └─ UDP/53  ip.addr == 1.0.0.1 && udp.port == 53
+
+type: tcp
+    └─ TCP/53  ip.addr == 1.0.0.1 && tcp.port == 53
+
+type: tls
+    └─ TLS + TCP/853  ip.addr == 1.0.0.1 && tcp.port == 853
+
+type: https
+    └─ HTTPS + TLS + TCP/443  ip.addr == 1.0.0.1 && tcp.port == 443
+
+type: h3
+    └─ HTTP/3 + QUIC/UDP/443  ip.addr == 1.0.0.1 && udp.port == 443

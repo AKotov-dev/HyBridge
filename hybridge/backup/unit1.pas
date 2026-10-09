@@ -15,6 +15,8 @@ type
   TMainForm = class(TForm)
     BarcodeQR1: TBarcodeQR;
     BypassBox: TComboBox;
+    DNSProtoBox: TComboBox;
+    Label3: TLabel;
     RadioGroup1: TRadioGroup;
     SpeedAuto: TCheckBox;
     SpeedUPEdit: TEdit;
@@ -27,7 +29,6 @@ type
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
-    Label9: TLabel;
     MaskBox: TComboBox;
     CreateBtn: TBitBtn;
     CopyBtn: TBitBtn;
@@ -275,18 +276,18 @@ begin
     Conf.Add('  "servers": [');
     Conf.Add('    {');
     Conf.Add('      "tag": "remote",');
-    Conf.Add('      "type": "udp",');
+    Conf.Add('      "type": "' + DNSProtoBox.Text + '",');
     Conf.Add('      "server": "1.0.0.1"');
     Conf.Add('    },');
     Conf.Add('    {');
     Conf.Add('      "tag": "remote-fallback",');
-    Conf.Add('      "type": "udp",');
-    Conf.Add('      "server": "9.9.9.9"');
+    Conf.Add('      "type": "' + DNSProtoBox.Text + '",');
+    Conf.Add('      "server": "8.8.4.4"');
     Conf.Add('    },');
     Conf.Add('    {');
     Conf.Add('      "tag": "local",');
-    Conf.Add('      "type": "udp",');
-    Conf.Add('      "server": "8.8.4.4"');
+    Conf.Add('      "type": "' + DNSProtoBox.Text + '",');
+    Conf.Add('      "server": "9.9.9.9"');
     Conf.Add('    }');
     Conf.Add('  ],');
     Conf.Add('');
@@ -436,6 +437,9 @@ begin
     // Bypass
     BypassBox.Text := GetJSONValue(config, 'dns.rules[0].domain_suffix[0]');
 
+    // DNS Protocol tcp/udp
+    DNSProtoBox.Text := GetJSONValue(config, 'dns.servers[0].type[0]');
+
     // local_port SOCKS5
     EditLocalSocks.Text := GetJSONValue(config, 'inbounds[0].listen_port');
 
@@ -444,9 +448,11 @@ begin
 
     // SpeedUP
     SpeedUPEdit.Text := GetJSONValue(config, 'outbounds[0].up_mbps');
+
     // SpeedDown
     SpeedDownEdit.Text := GetJSONValue(config, 'outbounds[0].down_mbps');
-    //Speed Auto/Manual
+
+    // Speed Auto/Manual
     if (SpeedUPEdit.Text = '') or (SpeedDownEdit.Text = '') then
       SpeedAuto.Checked := False
     else

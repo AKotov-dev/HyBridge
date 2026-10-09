@@ -18,11 +18,13 @@
 {"hash":1439653,"name":"tmainform.label7.caption","sourcebytes":[80,111,114,116,58,32,83,79,67,75,83,53],"value":"Port: SOCKS5"},
 {"hash":317840,"name":"tmainform.label8.caption","sourcebytes":[72,84,84,80],"value":"HTTP"},
 {"hash":244665,"name":"tmainform.editlocalhttp.text","sourcebytes":[56,56,56,57],"value":"8889"},
-{"hash":265289741,"name":"tmainform.label9.caption","sourcebytes":[45,45,45,45,45,45,45,45,45,45,45],"value":"-----------"},
 {"hash":300222,"name":"tmainform.label10.caption","sourcebytes":[68,79,87,78],"value":"DOWN"},
 {"hash":342387,"name":"tmainform.speedupedit.hint","sourcebytes":[77,98,112,115],"value":"Mbps"},
 {"hash":342387,"name":"tmainform.speeddownedit.hint","sourcebytes":[77,98,112,115],"value":"Mbps"},
 {"hash":130025759,"name":"tmainform.speedauto.hint","sourcebytes":[77,97,110,117,97,108,47,65,117,116,111],"value":"Manual/Auto"},
 {"hash":196583360,"name":"tmainform.speedauto.caption","sourcebytes":[83,112,101,101,100,58,32,85,80],"value":"Speed: UP"},
-{"hash":211604402,"name":"tmainform.radiogroup1.caption","sourcebytes":[79,98,102,117,115,99,97,116,111,114],"value":"Obfuscator"}
+{"hash":211604402,"name":"tmainform.radiogroup1.caption","sourcebytes":[79,98,102,117,115,99,97,116,111,114],"value":"Obfuscator"},
+{"hash":18739,"name":"tmainform.label3.caption","sourcebytes":[68,78,83],"value":"DNS"},
+{"hash":261996206,"name":"tmainform.dnsprotobox.hint","sourcebytes":[80,114,111,116,111,99,111,108,32,115,101,108,101,99,116,105,111,110],"value":"Protocol selection"},
+{"hash":31392,"name":"tmainform.dnsprotobox.text","sourcebytes":[116,99,112],"value":"tcp"}
 ]}

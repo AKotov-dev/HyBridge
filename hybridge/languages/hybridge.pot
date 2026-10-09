@@ -23,6 +23,14 @@ msgstr ""
 msgid "Create Client and Server"
 msgstr ""
 
+#: tmainform.dnsprotobox.hint
+msgid "Protocol selection"
+msgstr ""
+
+#: tmainform.dnsprotobox.text
+msgid "tcp"
+msgstr ""
+
 #: tmainform.editlocalhttp.text
 msgid "8889"
 msgstr ""
@@ -47,6 +55,10 @@ msgstr ""
 msgid "Server UDP port"
 msgstr ""
 
+#: tmainform.label3.caption
+msgid "DNS"
+msgstr ""
+
 #: tmainform.label4.caption
 msgid "Server Mask"
 msgstr ""
@@ -65,10 +77,6 @@ msgstr ""
 
 #: tmainform.label8.caption
 msgid "HTTP"
-msgstr ""
-
-#: tmainform.label9.caption
-msgid "-----------"
 msgstr ""
 
 #: tmainform.maskbox.text
