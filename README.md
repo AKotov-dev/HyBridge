@@ -32,7 +32,7 @@ The system proxy is configured automatically. Supported DEs: Budgie, GNOME, MATE
   <summary>DNS Transports in HyBridge...</summary>
 
 URL: https://sing-box.sagernet.org/configuration/dns/server/
-
+```
 type: tcp - DNS over TCP
     └─ TCP/53
 ip.addr == 1.0.0.1 && tcp.port == 53
@@ -56,7 +56,7 @@ ip.addr == 1.0.0.1 && tcp.port == 443
 type: quic - DNS over QUIC (DoQ) - blocked in Russia
     └─ QUIC + TLS 1.3 + UDP/853
 ip.addr == 1.0.0.1 && udp.port == 853
-
+```
 </details>
   
 **Useful links:** [hysteria](https://github.com/apernet/hysteria), [sing-box](https://github.com/SagerNet/sing-box).
