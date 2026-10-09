@@ -1,9 +1,9 @@
 # HyBridge
 Simple Hysteria2 client and server configurator.  
   
-**Dependencies:** systemd gtk2 (libgtk2.0-0 for Ubuntu)
-+ RPM: lib64proxy-gnome lib64proxy-kde
-+ DEB: libproxy1v5 libproxy1-plugin-gsettings
+**Dependencies:**
++ RPM: systemd gtk2 lib64proxy1
++ DEB: systemd libgtk2.0-0 libproxy1v5 libproxy1-plugin-gsettings
   
 **Lazarus:** LazBarcodes (from the Network Packet Manager)  
   
