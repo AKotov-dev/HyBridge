@@ -28,4 +28,35 @@ The system proxy is configured automatically. Supported DEs: Budgie, GNOME, MATE
 + If you modify the `Server` configuration (GUI), you must recreate both the Client and Server configurations. If only the client settings are changed, recreating both configurations is not required.
 + For Android smartphones, use the [NekoBox](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases) client. 
 
+<details>
+  <summary>DNS Transports in HyBridge...</summary>
+
+URL: https://sing-box.sagernet.org/configuration/dns/server/
+
+type: tcp - DNS over TCP
+    └─ TCP/53
+ip.addr == 1.0.0.1 && tcp.port == 53
+
+type: udp - DNS over UDP
+    └─ UDP/53
+ip.addr == 1.0.0.1 && udp.port == 53
+
+type: h3 - DNS over HTTP3 (DoH3)
+    └─ HTTP/3 + QUIC/UDP/443
+ip.addr == 1.0.0.1 && udp.port == 443
+
+type: tls - DNS over TLS (DoT)
+    └─ TLS + TCP/853
+ip.addr == 1.0.0.1 && tcp.port == 853
+
+type: https - DNS over HTTPS (DoH)
+    └─ HTTPS + TLS + TCP/443
+ip.addr == 1.0.0.1 && tcp.port == 443
+
+type: quic - DNS over QUIC (DoQ) - blocked in Russia
+    └─ QUIC + TLS 1.3 + UDP/853
+ip.addr == 1.0.0.1 && udp.port == 853
+
+</details>
+  
 **Useful links:** [hysteria](https://github.com/apernet/hysteria), [sing-box](https://github.com/SagerNet/sing-box).
