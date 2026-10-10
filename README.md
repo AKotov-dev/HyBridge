@@ -17,7 +17,7 @@ Configurations/Certificates: ~/.config/hybridge/config
 + Install `HyBridge` on your computer, enter your VPS `IP`, and click the `Create Client and Server` button
 + Be sure to save the provided configuration archive `hybridge-config.tar.gz`
 + Copy the server configuration and certificate from `hybridge-config.tar.gz` (server directory inside the archive) to `/etc/hysteria/{cert.pem,config.yaml}` on your VPS
-+ Activate the Hysteria server on your VPS: `systemctl restart hysteria-server; systemctl enable hysteria-server`
++ Activate and start the Hysteria server on your VPS: `systemctl enable hysteria-server; systemctl restart hysteria-server`
 + Click the `Start` button in the `HyBridge` client window and access the open internet
 
 The speed limit settings (UP/DOWN) are useful when configuring mobile devices or connections with asymmetric bandwidth. If you are unsure, leave them unchecked to use `Auto` mode, which allows the client to automatically adapt to the available network capacity.  
