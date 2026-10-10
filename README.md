@@ -16,7 +16,7 @@ Configurations/Certificates: ~/.config/hybridge/config
 + Install the [hysteria2](https://v2.hysteria.network/docs/getting-started/Installation/) server on your VPS: `bash <(curl -fsSL https://get.hy2.sh/)`
 + Install `HyBridge` on your computer, enter your VPS `IP`, and click the `Create Client and Server` button
 + Be sure to save the provided configuration archive `hybridge-config.tar.gz`
-+ Copy the server configuration and certificate from `hybridge-config.tar.gz` (server directory inside the archive) to `/etc/hysteria/{cert.pem,config.yaml}` on your VPS
++ Copy the server configuration and certificate from `hybridge-config.tar.gz` (./config/server directory inside the archive) to `/etc/hysteria/{cert.pem,config.yaml}` on your VPS
 + Activate and start the Hysteria server on your VPS: 
 ```
   systemctl enable hysteria-server; systemctl restart hysteria-server
