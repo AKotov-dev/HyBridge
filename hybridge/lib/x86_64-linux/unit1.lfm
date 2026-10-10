@@ -42,7 +42,7 @@ object MainForm: TMainForm
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 4
     TabOrder = 2
-    Text = '443'
+    Text = '18443'
     OnKeyPress = EditServerIPKeyPress
   end
   object Label1: TLabel

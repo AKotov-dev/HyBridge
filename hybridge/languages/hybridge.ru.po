@@ -46,7 +46,7 @@ msgid "11080"
 msgstr ""
 
 #: tmainform.editudpport.text
-msgid "443"
+msgid "18443"
 msgstr ""
 
 #: tmainform.hint
@@ -127,3 +127,4 @@ msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2026   https://git
 #: tmainform.stopbtn.caption
 msgid "Stop"
 msgstr "Стоп"
+
