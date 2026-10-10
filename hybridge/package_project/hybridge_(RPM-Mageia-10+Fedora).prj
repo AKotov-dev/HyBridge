@@ -77,7 +77,7 @@ toolversion=4.4
 0=v0.5
 1=+ sing-box-1.14.3
 2=+ DNS protocol selection: tcp, udp, h3, tls, https
-3=+ Self-contained RPM & DEB packages
+3=+ Self-contained RPM & DEB packages (Mageia 10 / Fedora >= 43 / Ubuntu >= 25.04)
 4=
 5=**Note:** Testing with server [app/v2.13.0](https://github.com/HyNetworks/hysteria/releases/tag/app%2Fv2.13.0) completed successfully.
 6=
