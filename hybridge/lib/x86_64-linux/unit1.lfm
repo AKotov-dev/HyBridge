@@ -619,7 +619,7 @@ object MainForm: TMainForm
     Top = 432
   end
   object SaveDialog1: TSaveDialog
-    FileName = 'config.tar.gz'
+    FileName = 'hybridge-config.tar.gz'
     Filter = 'Archive [.tar.gz]|*.tar.gz'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
     Left = 233

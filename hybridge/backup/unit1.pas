@@ -530,9 +530,9 @@ begin
 
       //Создаём архив cd ~/.config/hybridge/config/ && tar czf config.tar.gz ./config и выгружаем
       StartProcess('chmod 644 ~/.config/hybridge/config/server/etc/hysteria/* ; ' +
-        'tar -zcf ~/.config/hybridge/config.tar.gz -C ~/.config/hybridge/config .');
+        'tar -zcf ~/.config/hybridge/hybridge-config.tar.gz -C ~/.config/hybridge/config .');
 
-      CopyFile(GetUserDir + '.config/hybridge/config.tar.gz',
+      CopyFile(GetUserDir + '.config/hybridge/hybridge-config.tar.gz',
         SaveDialog1.FileName, [cffOverwriteFile]);
     end;
 
