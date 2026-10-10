@@ -3,7 +3,7 @@ Simple Hysteria2 client and server configurator.
   
 **Dependencies:**
 + RPM: systemd gtk2 libproxy.so.1()(64bit)
-+ DEB: systemd libgtk2.0-0 libproxy1v5 libproxy1-plugin-gsettings
++ DEB: systemd libgtk2.0-0 libproxy1v5
   
 **Lazarus:** LazBarcodes (from the Network Packet Manager)  
   
