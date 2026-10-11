@@ -75,7 +75,7 @@ toolversion=4.4
 
 [INFO]
 0=v0.5
-1=+ sing-box-1.14.3
+1=+ Mixed port instead of SOCKS5 / HTTP ports
 2=+ DNS protocol selection: tcp, udp, h3, tls, https
 3=+ Self-contained RPM & DEB packages (Mageia 10 / Fedora 44 / Ubuntu 26)
 4=
