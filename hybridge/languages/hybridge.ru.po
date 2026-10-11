@@ -83,7 +83,7 @@ msgstr "---Клиент: Байпас"
 
 #: tmainform.label7.caption
 msgid "Port (mixed)"
-msgstr "Порт (смешанный)"
+msgstr "Порт (mixed)"
 
 #: tmainform.label8.caption
 msgid "-------"
@@ -127,4 +127,3 @@ msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2026   https://git
 #: tmainform.stopbtn.caption
 msgid "Stop"
 msgstr "Стоп"
-
