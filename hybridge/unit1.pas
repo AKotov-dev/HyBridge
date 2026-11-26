@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, StrUtils, FileUtil,
-  Buttons, Process, ClipBrd, ExtCtrls, IniPropStorage, ubarcodes, DefaultTranslator;
+  Buttons, Process, ClipBrd, ExtCtrls, ubarcodes, DefaultTranslator, IniFiles;
 
 type
 
@@ -24,7 +24,6 @@ type
     SpeedDownEdit: TEdit;
     EditLocalMixed: TEdit;
     Image1: TImage;
-    IniPropStorage1: TIniPropStorage;
     Label10: TLabel;
     Label6: TLabel;
     Label7: TLabel;
@@ -46,6 +45,7 @@ type
     procedure CopyBtnClick(Sender: TObject);
     procedure CreateBtnClick(Sender: TObject);
     procedure EditServerIPKeyPress(Sender: TObject; var Key: char);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure SpeedAutoChange(Sender: TObject);
@@ -54,6 +54,8 @@ type
     procedure StopBtnClick(Sender: TObject);
     procedure LoadConfiguration;
     procedure CreateClientConfig(AUTH_PASS, OBFS_PASS: string);
+    procedure SaveSettings;
+    procedure LoadSettings;
 
   private
 
@@ -69,9 +71,60 @@ implementation
 uses
   service_state_trd, JSONHelper;
 
+  //Путь ~/.config/hybridge/hybridge.conf
+var
+  CONF: string;
+
+
   {$R *.lfm}
 
   { TMainForm }
+
+
+//Сохранение настроек формы
+procedure TMainForm.SaveSettings;
+var
+  Ini: TIniFile;
+begin
+  Ini := TIniFile.Create(CONF);
+  try
+    Ini.WriteInteger('TApplication.MainForm', 'MainForm_Top', MainForm.Top);
+    Ini.WriteInteger('TApplication.MainForm', 'MainForm_Left', MainForm.Left);
+    Ini.WriteInteger('TApplication.MainForm', 'MainForm_Width', MainForm.Width);
+    Ini.WriteInteger('TApplication.MainForm', 'MainForm_Height', MainForm.Height);
+
+    Ini.ReadString('TApplication.MainForm', 'SaveDialog1_InitialDir',
+      SaveDialog1.InitialDir);
+  finally
+    Ini.Free;
+  end;
+end;
+
+
+//Загрузка настроек формы
+procedure TMainForm.LoadSettings;
+var
+  Ini: TIniFile;
+begin
+  //  if not FileExists(CONF) then Exit;
+  Ini := TIniFile.Create(CONF);
+  try
+    MainForm.Top := Ini.ReadInteger('TApplication.MainForm', 'MainForm_Top',
+      MainForm.Top);
+    MainForm.Left := Ini.ReadInteger('TApplication.MainForm',
+      'MainForm_Left', MainForm.Left);
+    MainForm.Width := Ini.ReadInteger('TApplication.MainForm',
+      'MainForm_Width', MainForm.Width);
+    MainForm.Height := Ini.ReadInteger('TApplication.MainForm',
+      'MainForm_Height', MainForm.Height);
+
+    SaveDialog1.InitialDir := Ini.ReadString('TApplication.MainForm',
+      'SaveDialog1_InitialDir', GetUserDir);
+
+  finally
+    Ini.Free;
+  end;
+end;
 
 // Получение URI
 function BuildHysteria2URI(Server: string; Port: string; Password: string;
@@ -561,6 +614,12 @@ begin
   end;
 end;
 
+//Сохранение настроек формы
+procedure TMainForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  SaveSettings;
+end;
+
 procedure TMainForm.FormCreate(Sender: TObject);
 var
   bmp: TBitmap;
@@ -581,7 +640,7 @@ begin
   if not DirectoryExists(GetUserDir + '.config/hybridge') then
     ForceDirectories(GetUserDir + '.config/hybridge');
 
-  IniPropStorage1.IniFileName := GetUserDir + '.config/hybridge/hybridge.conf';
+  CONF := GetUserDir + '.config/hybridge/hybridge.conf';
 end;
 
 //Копирование URI в буфер
@@ -592,6 +651,9 @@ end;
 
 procedure TMainForm.FormShow(Sender: TObject);
 begin
+  //Загрузка настроек формы
+  LoadSettings;
+
   CopyBtn.Height := CreateBtn.Height;
   StartBtn.Height := CreateBtn.Height;
   StopBtn.Height := CreateBtn.Height;
